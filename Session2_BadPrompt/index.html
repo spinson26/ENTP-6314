@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tip Splitter</title>
+<style>
+  :root{
+    --bg1:#0f172a;
+    --bg2:#1e293b;
+    --card:#ffffff;
+    --ink:#0f172a;
+    --muted:#64748b;
+    --line:#e2e8f0;
+    --accent:#14b8a6;
+    --accent-dark:#0d9488;
+    --soft:#f1f5f9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--ink);
+  }
+  .app{
+    width:100%;
+    max-width:420px;
+    background:var(--card);
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 30px 60px -15px rgba(0,0,0,.4);
+  }
+  header{margin-bottom:22px}
+  header h1{
+    font-size:1.5rem;
+    letter-spacing:-.02em;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  header .dot{
+    width:12px;height:12px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 6px rgba(20,184,166,.18);
+  }
+  header p{color:var(--muted);font-size:.9rem;margin-top:6px}
+
+  label{
+    display:block;
+    font-size:.8rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+  .field{margin-bottom:20px}
+  .input-wrap{position:relative}
+  .input-wrap .prefix{
+    position:absolute;left:16px;top:50%;transform:translateY(-50%);
+    color:var(--muted);font-weight:600;
+  }
+  input[type=number]{
+    width:100%;
+    font-size:1.15rem;
+    font-weight:600;
+    padding:14px 16px 14px 32px;
+    border:2px solid var(--line);
+    border-radius:14px;
+    outline:none;
+    transition:border-color .15s,box-shadow .15s;
+    -moz-appearance:textfield;
+  }
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  input[type=number]:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 4px rgba(20,184,166,.15);
+  }
+
+  .tips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .tip-btn{
+    padding:12px 0;
+    border:2px solid var(--line);
+    background:var(--soft);
+    border-radius:12px;
+    font-size:.95rem;
+    font-weight:700;
+    color:var(--ink);
+    cursor:pointer;
+    transition:all .15s;
+  }
+  .tip-btn:hover{border-color:var(--accent)}
+  .tip-btn.active{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#fff;
+  }
+  .custom-tip{margin-top:8px}
+
+  .stepper{display:flex;align-items:center;gap:12px}
+  .stepper button{
+    width:46px;height:46px;
+    border:2px solid var(--line);
+    background:var(--soft);
+    border-radius:12px;
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--ink);
+    cursor:pointer;
+    transition:all .15s;
+  }
+  .stepper button:hover{border-color:var(--accent);color:var(--accent-dark)}
+  .stepper .count{
+    flex:1;
+    text-align:center;
+    font-size:1.3rem;
+    font-weight:700;
+  }
+
+  .results{
+    margin-top:24px;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    border-radius:18px;
+    padding:20px;
+    color:#fff;
+  }
+  .row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:10px 0;
+  }
+  .row + .row{border-top:1px solid rgba(255,255,255,.12)}
+  .row .k{font-size:.9rem;color:#cbd5e1}
+  .row .v{font-size:1.05rem;font-weight:600}
+  .row.total .k{font-size:1rem;color:#fff;font-weight:600}
+  .row.total .v{
+    font-size:1.9rem;
+    font-weight:800;
+    color:var(--accent);
+    letter-spacing:-.02em;
+  }
+  .per{font-size:.78rem;color:#94a3b8;margin-top:2px;text-align:right}
+
+  footer{
+    margin-top:18px;
+    text-align:center;
+    font-size:.78rem;
+    color:var(--muted);
+  }
+  .reset{
+    background:none;border:none;color:var(--accent-dark);
+    font-weight:600;cursor:pointer;font-size:.85rem;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1><span class="dot"></span>Tip Splitter</h1>
+    <p>Split the bill fairly, tip included.</p>
+  </header>
+
+  <div class="field">
+    <label for="bill">Bill amount</label>
+    <div class="input-wrap">
+      <span class="prefix">$</span>
+      <input type="number" id="bill" min="0" step="0.01" placeholder="0.00" inputmode="decimal">
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Tip percentage</label>
+    <div class="tips" id="tips">
+      <button class="tip-btn" data-tip="10">10%</button>
+      <button class="tip-btn active" data-tip="15">15%</button>
+      <button class="tip-btn" data-tip="18">18%</button>
+      <button class="tip-btn" data-tip="20">20%</button>
+    </div>
+    <div class="input-wrap custom-tip">
+      <span class="prefix">%</span>
+      <input type="number" id="customTip" min="0" step="1" placeholder="Custom" inputmode="decimal">
+    </div>
+  </div>
+
+  <div class="field">
+    <label>Number of people</label>
+    <div class="stepper">
+      <button id="minus" aria-label="Fewer people">&minus;</button>
+      <div class="count" id="people">2</div>
+      <button id="plus" aria-label="More people">+</button>
+    </div>
+  </div>
+
+  <div class="results">
+    <div class="row"><span class="k">Tip amount</span><span class="v" id="tipAmt">$0.00</span></div>
+    <div class="row"><span class="k">Total with tip</span><span class="v" id="grand">$0.00</span></div>
+    <div class="row total">
+      <div>
+        <span class="k">Each person pays</span>
+      </div>
+      <div>
+        <span class="v" id="perPerson">$0.00</span>
+        <div class="per" id="splitNote">split 2 ways</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <button class="reset" id="reset">Reset</button>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bill = document.getElementById('bill');
+  var customTip = document.getElementById('customTip');
+  var tipsBox = document.getElementById('tips');
+  var peopleEl = document.getElementById('people');
+  var minus = document.getElementById('minus');
+  var plus = document.getElementById('plus');
+  var tipAmtEl = document.getElementById('tipAmt');
+  var grandEl = document.getElementById('grand');
+  var perEl = document.getElementById('perPerson');
+  var noteEl = document.getElementById('splitNote');
+  var reset = document.getElementById('reset');
+
+  var tipPct = 15;
+  var people = 2;
+
+  function money(n){
+    if(!isFinite(n)) n = 0;
+    return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function activeCustom(){
+    return customTip.value !== '' && !isNaN(parseFloat(customTip.value));
+  }
+
+  function currentTip(){
+    return activeCustom() ? Math.max(0, parseFloat(customTip.value)) : tipPct;
+  }
+
+  function render(){
+    var b = parseFloat(bill.value);
+    if(isNaN(b) || b < 0) b = 0;
+    var pct = currentTip();
+    var tip = b * pct / 100;
+    var grand = b + tip;
+    var per = people > 0 ? grand / people : grand;
+
+    tipAmtEl.textContent = money(tip);
+    grandEl.textContent = money(grand);
+    perEl.textContent = money(per);
+    noteEl.textContent = 'split ' + people + (people === 1 ? ' way' : ' ways');
+  }
+
+  tipsBox.addEventListener('click', function(e){
+    var btn = e.target.closest('.tip-btn');
+    if(!btn) return;
+    tipPct = parseFloat(btn.dataset.tip);
+    customTip.value = '';
+    [].forEach.call(tipsBox.children, function(c){ c.classList.remove('active'); });
+    btn.classList.add('active');
+    render();
+  });
+
+  customTip.addEventListener('input', function(){
+    if(activeCustom()){
+      [].forEach.call(tipsBox.children, function(c){ c.classList.remove('active'); });
+    }
+    render();
+  });
+
+  bill.addEventListener('input', render);
+
+  minus.addEventListener('click', function(){
+    if(people > 1){ people--; peopleEl.textContent = people; render(); }
+  });
+  plus.addEventListener('click', function(){
+    if(people < 50){ people++; peopleEl.textContent = people; render(); }
+  });
+
+  reset.addEventListener('click', function(){
+    bill.value = '';
+    customTip.value = '';
+    tipPct = 15;
+    people = 2;
+    peopleEl.textContent = people;
+    [].forEach.call(tipsBox.children, function(c){
+      c.classList.toggle('active', c.dataset.tip === '15');
+    });
+    render();
+    bill.focus();
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
