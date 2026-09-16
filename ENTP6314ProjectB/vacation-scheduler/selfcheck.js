@@ -201,5 +201,55 @@ function runSelfChecks() {
     errorsOnly(rotationResult).length === 0,
     "0 errors alongside the warning");
 
+  // ---- The auto-allocator ----------------------------------------------
+  var allocation = autoAllocate(rules, weeks);
+  var allocationErrors = errorsOnly(allocation.violations);
+
+  assert("Auto-allocation never breaks the coverage cap",
+    countType(allocation.violations, "coverage") === 0,
+    "0 weeks over " + rules.maxConcurrentOnVacation + " people");
+
+  assert("Auto-allocation gets everyone to their minimum",
+    countType(allocation.violations, "under-minimum") === 0 &&
+    allocation.unresolved.length === 0,
+    allocation.unresolved.length + " employees unresolved");
+
+  assert("Auto-allocation keeps seniors within their maximum",
+    countType(allocation.violations, "over-maximum") === 0,
+    "no senior over " + rules.seniorTierMaxWeeks + " weeks");
+
+  assert("Every lottery week was assigned by lottery, not seniority",
+    countType(allocation.violations, "excluded-week") === 0,
+    "weeks " + lottery.join(", ") + " assigned by rotation");
+
+  assert("Auto-allocation produces no errors at all",
+    allocationErrors.length === 0,
+    allocationErrors.length + " errors");
+
+  assert("Nobody is assigned the same week twice",
+    allocation.employees.every(function (e) {
+      var seen = {};
+      return e.assignedWeeks.every(function (a) {
+        if (seen[a.week]) return false;
+        seen[a.week] = true;
+        return true;
+      });
+    }),
+    "checked all 18 employees");
+
+  var allocSeniors = allocation.employees.filter(function (e) { return e.isSeniorTier; });
+  var allocOthers = allocation.employees.filter(function (e) { return !e.isSeniorTier; });
+
+  function avgSummer(list) {
+    return list.reduce(function (s, e) {
+      return s + summerWeekCountFor(e, weeks);
+    }, 0) / list.length;
+  }
+
+  assert("The senior tier gets more summer than everyone else",
+    avgSummer(allocSeniors) > avgSummer(allocOthers),
+    "seniors average " + avgSummer(allocSeniors).toFixed(1) +
+    " summer weeks vs " + avgSummer(allocOthers).toFixed(1));
+
   return results;
 }

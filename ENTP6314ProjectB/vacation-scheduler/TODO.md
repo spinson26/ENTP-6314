@@ -35,13 +35,23 @@ actual gap depends on how many weeks each senior wants.
 each senior locks in at least 4 summer weeks before the other 14 get any summer allocation.
 
 Context for the decision — there are **44 summer slots** total (11 summer weeks × the coverage
-cap of 4) shared among 18 people:
+cap of 4) shared among 18 people. These are the **actual results** from running the allocator at
+each setting:
 
-| Guarantee per senior | Slots used by the 4 seniors | Left for the other 14 | Each of the 14 gets |
-|---|---|---|---|
-| 0 (pick first) | varies | varies | varies |
-| 4 | 16 | 28 | ~2 weeks |
-| 6 | 24 | 20 | ~1.4 weeks |
+| Setting | Senior summer avg | Staff summer avg | Staff range | Valid schedule? |
+|---|---|---|---|---|
+| **0** (current placeholder) | 3.0 | 2.3 | 2–3 | yes |
+| 2 | 4.0 | 2.0 | 2–2 | yes |
+| 4 | 6.0 | 1.4 | 1–2 | yes |
+| 6 | 7.5 | 1.0 | 1–1 | yes |
+| 8 | 9.0 | 0.6 | 0–1 | yes |
+
+Every setting produces a legal schedule with no errors and nobody left unplaced, so this is
+purely a fairness call, not a technical one.
+
+**Worth knowing:** at the current placeholder of 0, the senior advantage is very thin — 3.0
+summer weeks vs 2.3, and the four most senior *non*-senior staff also get 3. If the intent is
+for the senior tier to be visibly better off in summer, 0 is probably too low.
 
 ---
 

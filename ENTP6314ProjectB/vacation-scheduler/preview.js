@@ -51,8 +51,56 @@
       : failed + " of " + results.length + " checks FAILED.") +
     "</p><ul class='check-list'>" + checkHtml + "</ul>";
 
+  // ---- What the auto-allocator produced -----------------------------------
+  var allocation = autoAllocate(RULES, weeks);
+  var summary = summarizeAllocation(allocation, weeks, RULES);
+  var occupancy = weekOccupancy(allocation.employees, weeks);
+
+  var allocHtml =
+    '<table class="summary-table">' +
+    row("Weeks handed out", summary.totalAssigned + " of " + summary.capacity + " available") +
+    row("Busiest week", summary.busiestWeek + " people out (cap is " +
+        RULES.maxConcurrentOnVacation + ")") +
+    row("Senior tier average", summary.seniorAverageWeeks.toFixed(1) + " weeks (" +
+        summary.seniorAverageSummer.toFixed(1) + " of them summer)") +
+    row("Everyone else average", summary.otherAverageWeeks.toFixed(1) + " weeks (" +
+        summary.otherAverageSummer.toFixed(1) + " of them summer)") +
+    row("Rule errors", summary.errors) +
+    row("Warnings", summary.warnings) +
+    row("Could not be placed", summary.unresolved) +
+    "</table>";
+
+  if (allocation.unresolved.length > 0) {
+    allocHtml += '<ul class="check-list">' + allocation.unresolved.map(function (u) {
+      return '<li class="check-fail">' + u.name + " got " + u.got + " of " +
+             u.needed + " weeks — " + u.reason + "</li>";
+    }).join("") + "</ul>";
+  }
+
+  allocHtml += '<table class="week-table"><thead><tr><th>#</th><th>Employee</th>' +
+               "<th>Tier</th><th>Weeks</th><th>Summer</th><th>Lottery</th></tr></thead><tbody>";
+
+  allocation.employees.forEach(function (e) {
+    var lotterySet = {};
+    weeks.forEach(function (w) { if (w.isExcludedFromSeniority) lotterySet[w.weekNumber] = true; });
+    var lotteryCount = e.assignedWeeks.filter(function (a) { return lotterySet[a.week]; }).length;
+
+    allocHtml += "<tr" + (e.isSeniorTier ? ' class="row-senior"' : "") + ">" +
+      "<td>" + e.seniorityRank + "</td>" +
+      "<td>" + e.name + "</td>" +
+      "<td>" + (e.isSeniorTier ? "Senior" : "Staff") + "</td>" +
+      "<td>" + e.assignedWeeks.length + "</td>" +
+      "<td>" + summerWeekCountFor(e, weeks) + "</td>" +
+      "<td>" + lotteryCount + "</td>" +
+      "</tr>";
+  });
+
+  allocHtml += "</tbody></table>";
+  document.getElementById("allocation-preview").innerHTML = allocHtml;
+
   // ---- The 52-week table --------------------------------------------------
-  var html = "<thead><tr><th>Week</th><th>Dates</th><th>Type</th><th>Notes</th></tr></thead><tbody>";
+  var html = "<thead><tr><th>Week</th><th>Dates</th><th>Type</th><th>Notes</th>" +
+             "<th>People out</th></tr></thead><tbody>";
 
   weeks.forEach(function (w) {
     var type = "";
@@ -72,6 +120,8 @@
             "<td>" + formatDateLong(w.startDate) + " – " + formatDateLong(w.endDate) + "</td>" +
             "<td>" + type + "</td>" +
             "<td>" + w.holidays.join(", ") + "</td>" +
+            "<td>" + occupancy[w.weekNumber].length + " / " +
+            RULES.maxConcurrentOnVacation + "</td>" +
             "</tr>";
   });
 
