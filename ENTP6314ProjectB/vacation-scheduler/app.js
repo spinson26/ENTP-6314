@@ -14,6 +14,18 @@ var state = {
   selectedEmployeeId: "emp1"
 };
 
+// Whether this browser will let us remember anything between visits.
+var canSave = storageWorks();
+
+// Pick up where we left off, if there is anything to pick up.
+(function restore() {
+  var saved = loadSavedSchedule();
+  if (!saved) return;
+  var restored = applySavedSchedule(saved, state.rules);
+  state.employees = restored.employees;
+  state.requests = restored.requests;
+})();
+
 // ---------------------------------------------------------------------------
 // Working with the schedule
 // ---------------------------------------------------------------------------
@@ -56,6 +68,28 @@ function render() {
   renderSubtitle(violations);
   renderEmployeeTab();
   renderRequestsTab();
+  persist();
+}
+
+// Saved after every change, so a refresh or a closed tab loses nothing.
+function persist() {
+  var status = document.getElementById("save-status");
+  if (!status) return;
+
+  if (!canSave) {
+    status.textContent = "This browser is not allowing saving — use Export backup to keep your work.";
+    status.className = "save-status save-off";
+    return;
+  }
+
+  if (saveSchedule(state)) {
+    status.textContent = "Saved in this browser.";
+    status.className = "save-status save-on";
+  } else {
+    canSave = false;
+    status.textContent = "Saving failed — use Export backup to keep your work.";
+    status.className = "save-status save-off";
+  }
 }
 
 function weekByNumber(weekNumber) {
@@ -497,6 +531,86 @@ document.getElementById("btn-clear").addEventListener("click", function () {
   if (!confirm("Clear every assigned week and start from an empty schedule?")) return;
   state.employees.forEach(function (e) { e.assignedWeeks = []; });
   setNote("Schedule cleared.");
+  render();
+});
+
+// ---------------------------------------------------------------------------
+// Backing up and restoring
+// ---------------------------------------------------------------------------
+
+function fileStamp() {
+  var now = new Date();
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+  return now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
+}
+
+document.getElementById("btn-export-json").addEventListener("click", function () {
+  var ok = downloadFile(
+    "vacation-schedule-" + state.rules.year + "-" + fileStamp() + ".json",
+    JSON.stringify(serializeSchedule(state), null, 2),
+    "application/json");
+  setNote(ok ? "Backup file downloaded." : "Could not create the file in this browser.");
+});
+
+document.getElementById("btn-export-csv").addEventListener("click", function () {
+  var ok = downloadFile(
+    "vacation-schedule-" + state.rules.year + "-" + fileStamp() + ".csv",
+    scheduleToCsv(state),
+    "text/csv");
+  setNote(ok ? "Spreadsheet downloaded." : "Could not create the file in this browser.");
+});
+
+document.getElementById("btn-import-json").addEventListener("click", function () {
+  document.getElementById("import-file").click();
+});
+
+document.getElementById("import-file").addEventListener("change", function (event) {
+  var file = event.target.files && event.target.files[0];
+  if (!file) return;
+
+  var reader = new FileReader();
+
+  reader.onload = function () {
+    var data;
+    try {
+      data = JSON.parse(reader.result);
+    } catch (e) {
+      setNote("That file is not a valid backup — it could not be read as JSON.");
+      return;
+    }
+
+    if (!data || !data.employees) {
+      setNote("That file does not look like a schedule backup.");
+      return;
+    }
+
+    if (!confirm("Importing replaces the schedule currently on screen. Continue?")) return;
+
+    var restored = applySavedSchedule(data, state.rules);
+    state.employees = restored.employees;
+    state.requests = restored.requests;
+
+    setNote("Schedule imported." +
+            (restored.skipped > 0 ? " " + restored.skipped + " entries were ignored as invalid." : ""));
+    render();
+  };
+
+  reader.onerror = function () { setNote("That file could not be read."); };
+  reader.readAsText(file);
+
+  // Let the same file be picked again later.
+  event.target.value = "";
+});
+
+document.getElementById("btn-reset").addEventListener("click", function () {
+  if (!confirm("This wipes the schedule AND every request, and forgets the saved copy " +
+               "in this browser. This cannot be undone.\n\nReset everything?")) return;
+
+  clearSavedSchedule();
+  state.employees = buildEmployees(state.rules);
+  state.requests = [];
+  state.selectedEmployeeId = "emp1";
+  setNote("Everything reset to a blank schedule.");
   render();
 });
 

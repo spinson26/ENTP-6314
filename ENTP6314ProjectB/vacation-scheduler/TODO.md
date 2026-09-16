@@ -55,6 +55,25 @@ for the senior tier to be visibly better off in summer, 0 is probably too low.
 
 ---
 
+## For you to check: does saving work when you double-click the file?
+
+Automatic saving is confirmed working when the app is served from a local web server.
+I could **not** verify it when opening `index.html` directly from File Explorer, because
+Claude's preview pane converts local files into a form where browser storage is switched off
+by design — that's a limitation of my testing tool, not of the app.
+
+In normal Chrome or Edge, opening a local file this way usually does allow saving. **Please
+confirm it yourself:** double-click `index.html`, make a change, press F5, and see whether the
+change is still there.
+
+The app tells you either way — look at the grey text on the right of the toolbar:
+- *"Saved in this browser."* → saving is working
+- *"This browser is not allowing saving…"* → use **Export backup** to keep your work in a file
+
+Either way nothing breaks; worst case you save by file instead of automatically.
+
+---
+
 ## Also worth confirming
 
 - **Do the 4 lottery weeks count toward an employee's 9-week minimum?** The app currently

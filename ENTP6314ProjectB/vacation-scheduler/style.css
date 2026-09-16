@@ -83,6 +83,24 @@ body {
   font-weight: 600;
 }
 
+.toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background: #dbe2e8;
+  margin: 0 4px;
+}
+
+.save-status {
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+.save-on  { color: #8695a1; }
+.save-off { color: #a02a2a; font-weight: 600; }
+
+.btn-danger { color: #a02a2a; }
+.btn-danger:hover { background: #fbeaea; border-color: #c23b3b; }
+
 .btn {
   background: #fff;
   border: 1px solid #c7d0d6;

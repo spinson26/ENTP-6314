@@ -27,7 +27,20 @@
     <div class="toolbar">
       <button class="btn btn-primary" id="btn-allocate">Run auto-allocation</button>
       <button class="btn" id="btn-clear">Clear all</button>
+
+      <span class="toolbar-divider"></span>
+
+      <button class="btn" id="btn-export-json">Export backup</button>
+      <button class="btn" id="btn-import-json">Import backup</button>
+      <button class="btn" id="btn-export-csv">Export for Excel</button>
+      <button class="btn btn-danger" id="btn-reset">Reset everything</button>
+
+      <input type="file" id="import-file" accept=".json,application/json" hidden>
+    </div>
+
+    <div class="toolbar">
       <span class="toolbar-note" id="toolbar-note"></span>
+      <span class="save-status" id="save-status"></span>
     </div>
 
     <div class="schedule-layout">
@@ -126,6 +139,7 @@
 <script src="calendar.js"></script>
 <script src="validate.js"></script>
 <script src="allocate.js"></script>
+<script src="storage.js"></script>
 <script src="selfcheck.js"></script>
 <script src="app.js"></script>
 </body>
