@@ -125,3 +125,11 @@ table {
   font-weight: 400;
   color: #5b6b77;
 }
+
+.check-summary {
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.all-pass { color: #1c6b34; }
+.some-fail { color: #a02a2a; }

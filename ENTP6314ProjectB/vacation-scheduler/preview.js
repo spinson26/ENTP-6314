@@ -34,28 +34,22 @@
     return "<tr><th>" + label + "</th><td>" + value + "</td></tr>";
   }
 
-  // ---- Automatic checks ---------------------------------------------------
-  var checks = [];
-  checks.push(check("Calendar has exactly 52 weeks", weeks.length === 52, weeks.length + " weeks"));
-  checks.push(check("Exactly 11 summer weeks", summer.length === 11,
-                    summer.length + " summer weeks: " + summer.join(", ")));
-  checks.push(check("4 distinct lottery weeks", lottery.length === 4,
-                    lottery.length + " lottery weeks: " + lottery.join(", ")));
-  checks.push(check("No week is both summer and lottery",
-                    weeks.every(function (w) { return !(w.isSummer && w.isExcludedFromSeniority); }),
-                    "checked all 52 weeks"));
-  checks.push(check("18 employees, 4 in the senior tier",
-                    employees.length === 18 && seniors.length === 4,
-                    employees.length + " employees, " + seniors.length + " senior"));
+  // ---- Self-checks --------------------------------------------------------
+  var results = runSelfChecks();
+  var failed = results.filter(function (r) { return !r.passed; }).length;
+
+  var checkHtml = results.map(function (r) {
+    return '<li class="' + (r.passed ? "check-pass" : "check-fail") + '">' +
+           (r.passed ? "PASS" : "FAIL") + " — " + r.label +
+           ' <span class="check-detail">(' + r.detail + ")</span></li>";
+  }).join("");
 
   document.getElementById("calendar-check").innerHTML =
-    '<ul class="check-list">' + checks.join("") + "</ul>";
-
-  function check(label, passed, detail) {
-    return '<li class="' + (passed ? "check-pass" : "check-fail") + '">' +
-           (passed ? "PASS" : "FAIL") + " — " + label +
-           ' <span class="check-detail">(' + detail + ")</span></li>";
-  }
+    '<p class="check-summary ' + (failed === 0 ? "all-pass" : "some-fail") + '">' +
+    (failed === 0
+      ? "All " + results.length + " checks pass."
+      : failed + " of " + results.length + " checks FAILED.") +
+    "</p><ul class='check-list'>" + checkHtml + "</ul>";
 
   // ---- The 52-week table --------------------------------------------------
   var html = "<thead><tr><th>Week</th><th>Dates</th><th>Type</th><th>Notes</th></tr></thead><tbody>";
