@@ -304,6 +304,87 @@ body {
 .violation-error { background: #fbeaea; color: #7d1f1f; }
 .violation-warning { background: #fdf6e8; color: #7a5410; }
 
+/* ---- employee & request tabs ---- */
+
+.two-up {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.two-up > .panel { flex: 1 1 0; min-width: 0; }
+
+@media (max-width: 900px) {
+  .two-up { flex-direction: column; }
+  .two-up > .panel { width: 100%; }
+}
+
+.field { margin-bottom: 14px; }
+
+.field-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5b6b77;
+  margin-bottom: 6px;
+}
+
+.select, .text-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #c7d0d6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #fff;
+  color: #1f2933;
+}
+
+.select:focus, .text-input:focus {
+  outline: none;
+  border-color: #2f7fd6;
+  box-shadow: 0 0 0 3px rgba(47, 127, 214, 0.15);
+}
+
+.select:disabled { background: #f2f5f7; color: #8695a1; }
+
+#employee-picker { margin-bottom: 16px; }
+
+.btn-small { padding: 5px 11px; font-size: 0.8rem; }
+
+.btn-approve { background: #2f6f4a; border-color: #2f6f4a; color: #fff; }
+.btn-approve:hover { background: #245a3b; border-color: #245a3b; }
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.action-cell { white-space: nowrap; }
+
+.form-note {
+  font-size: 0.82rem;
+  color: #2f6f4a;
+  font-weight: 600;
+  margin: 10px 0 0;
+  min-height: 1.1em;
+}
+
+.spaced { margin-top: 24px; }
+
+.pill {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pill-pending  { background: #fdf0d8; color: #8a5d12; }
+.pill-approved { background: #e8f6ec; color: #1c6b34; }
+.pill-denied   { background: #fbeaea; color: #a02a2a; }
+
 /* ---- generic tables (checks tab) ---- */
 
 .summary-table, .week-table {

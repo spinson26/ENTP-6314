@@ -50,11 +50,48 @@
 
   <!-- ---------------------------------------------------------------- -->
   <section class="tab-panel hidden" id="tab-employees">
-    <div class="panel"><p class="hint">Coming in the next phase.</p></div>
+    <div class="panel">
+      <label class="field-label" for="employee-picker">Showing</label>
+      <select id="employee-picker" class="select"></select>
+      <div id="employee-summary"></div>
+    </div>
+
+    <div class="two-up">
+      <div class="panel">
+        <h2>Assigned weeks</h2>
+        <div id="employee-weeks"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Request an extra week</h2>
+        <p class="hint">Only weeks with room under the coverage cap can be requested.</p>
+        <div class="field">
+          <label class="field-label" for="request-week">Week</label>
+          <select id="request-week" class="select"></select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="request-note">Note (optional)</label>
+          <input type="text" id="request-note" class="text-input" placeholder="Why you need it">
+        </div>
+        <button class="btn btn-primary" id="btn-request">Submit request</button>
+        <p class="form-note" id="request-note-msg"></p>
+
+        <h2 class="spaced">Your requests</h2>
+        <div id="employee-requests"></div>
+      </div>
+    </div>
   </section>
 
   <section class="tab-panel hidden" id="tab-requests">
-    <div class="panel"><p class="hint">Coming in the next phase.</p></div>
+    <div class="panel">
+      <h2>Pending requests</h2>
+      <div id="pending-requests"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Already decided</h2>
+      <div id="decided-requests"></div>
+    </div>
   </section>
 
   <section class="tab-panel hidden" id="tab-dashboard">

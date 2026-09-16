@@ -10,7 +10,8 @@ var state = {
   weeks: buildCalendar(RULES.year, RULES),
   employees: buildEmployees(RULES),
   requests: [],
-  lastAllocation: null
+  lastAllocation: null,
+  selectedEmployeeId: "emp1"
 };
 
 // ---------------------------------------------------------------------------
@@ -53,7 +54,25 @@ function render() {
   renderGrid(violations);
   renderViolations(violations);
   renderSubtitle(violations);
+  renderEmployeeTab();
+  renderRequestsTab();
 }
+
+function weekByNumber(weekNumber) {
+  return state.weeks.filter(function (w) { return w.weekNumber === weekNumber; })[0];
+}
+
+function describeWeek(week) {
+  var kind = week.isExcludedFromSeniority ? "Lottery" : (week.isSummer ? "Summer" : "Normal");
+  return "Week " + week.weekNumber + " — " + week.label + " (" + kind + ")";
+}
+
+var METHOD_LABELS = {
+  "seniority": "seniority bid",
+  "lottery": "lottery",
+  "manual": "placed by admin",
+  "extra-request": "approved extra week"
+};
 
 function renderSubtitle(violations) {
   var errors = errorsOnly(violations).length;
@@ -183,6 +202,191 @@ function renderViolations(violations) {
 }
 
 // ---------------------------------------------------------------------------
+// The employee tab
+// ---------------------------------------------------------------------------
+
+function renderEmployeeTab() {
+  var picker = document.getElementById("employee-picker");
+  var employee = findEmployee(state.selectedEmployeeId) || state.employees[0];
+  state.selectedEmployeeId = employee.id;
+
+  picker.innerHTML = state.employees.map(function (e) {
+    return "<option value='" + e.id + "'" +
+           (e.id === employee.id ? " selected" : "") + ">" +
+           e.seniorityRank + ". " + e.name +
+           (e.isSeniorTier ? " (senior tier)" : "") + "</option>";
+  }).join("");
+
+  // ---- summary ----
+  var total = employee.assignedWeeks.length;
+  var ceiling = effectiveMaxWeeks(employee, state.requests);
+  var summerCount = summerWeekCountFor(employee, state.weeks);
+  var statusClass = total < employee.minWeeks ? "total-under"
+                  : (ceiling !== null && total > ceiling ? "total-over" : "total-ok");
+
+  document.getElementById("employee-summary").innerHTML =
+    "<table class='summary-table'>" +
+    "<tr><th>Weeks assigned</th><td class='" + statusClass + "'>" + total +
+      " of " + (ceiling === null ? employee.minWeeks + " minimum, no maximum" : ceiling + " maximum") +
+      "</td></tr>" +
+    "<tr><th>Minimum required</th><td>" + employee.minWeeks + "</td></tr>" +
+    "<tr><th>Summer weeks</th><td>" + summerCount + "</td></tr>" +
+    "<tr><th>Seniority rank</th><td>" + employee.seniorityRank + " of " +
+      state.employees.length + (employee.isSeniorTier ? " — senior tier" : "") + "</td></tr>" +
+    "</table>";
+
+  // ---- their weeks ----
+  var sorted = employee.assignedWeeks.slice().sort(function (a, b) { return a.week - b.week; });
+
+  if (sorted.length === 0) {
+    document.getElementById("employee-weeks").innerHTML =
+      "<p class='hint'>No weeks assigned yet.</p>";
+  } else {
+    document.getElementById("employee-weeks").innerHTML =
+      "<table class='week-table'><thead><tr><th>Week</th><th>Dates</th>" +
+      "<th>Type</th><th>How</th></tr></thead><tbody>" +
+      sorted.map(function (a) {
+        var week = weekByNumber(a.week);
+        var kind = week.isExcludedFromSeniority ? "Lottery" : (week.isSummer ? "Summer" : "Normal");
+        var rowCls = week.isExcludedFromSeniority ? "row-lottery"
+                   : (week.isSummer ? "row-summer" : "");
+        return "<tr class='" + rowCls + "'><td>" + a.week + "</td><td>" +
+               week.label + "</td><td>" + kind + "</td><td>" +
+               (METHOD_LABELS[a.method] || a.method) + "</td></tr>";
+      }).join("") + "</tbody></table>";
+  }
+
+  // ---- which weeks can be requested ----
+  var occupancy = weekOccupancy(state.employees, state.weeks);
+  var openWeeks = state.weeks.filter(function (w) {
+    return occupancy[w.weekNumber].length < state.rules.maxConcurrentOnVacation &&
+           !hasWeek(employee, w.weekNumber) &&
+           !state.requests.some(function (r) {
+             return r.employeeId === employee.id &&
+                    r.weekNumber === w.weekNumber &&
+                    r.status === "pending";
+           });
+  });
+
+  var weekSelect = document.getElementById("request-week");
+  if (openWeeks.length === 0) {
+    weekSelect.innerHTML = "<option value=''>No weeks available</option>";
+    weekSelect.disabled = true;
+    document.getElementById("btn-request").disabled = true;
+  } else {
+    weekSelect.innerHTML = openWeeks.map(function (w) {
+      return "<option value='" + w.weekNumber + "'>" + describeWeek(w) +
+             " — " + occupancy[w.weekNumber].length + "/" +
+             state.rules.maxConcurrentOnVacation + " taken</option>";
+    }).join("");
+    weekSelect.disabled = false;
+    document.getElementById("btn-request").disabled = false;
+  }
+
+  // ---- their request history ----
+  var mine = state.requests.filter(function (r) { return r.employeeId === employee.id; });
+  document.getElementById("employee-requests").innerHTML =
+    mine.length === 0
+      ? "<p class='hint'>No requests submitted.</p>"
+      : "<table class='week-table'><thead><tr><th>Week</th><th>Note</th>" +
+        "<th>Status</th></tr></thead><tbody>" +
+        mine.map(function (r) {
+          return "<tr><td>" + r.weekNumber + "</td><td>" +
+                 (r.note || "—") + "</td><td><span class='pill pill-" + r.status + "'>" +
+                 r.status + "</span></td></tr>";
+        }).join("") + "</tbody></table>";
+}
+
+// ---------------------------------------------------------------------------
+// The requests tab (admin)
+// ---------------------------------------------------------------------------
+
+function renderRequestsTab() {
+  var occupancy = weekOccupancy(state.employees, state.weeks);
+  var pending = state.requests.filter(function (r) { return r.status === "pending"; });
+  var decided = state.requests.filter(function (r) { return r.status !== "pending"; });
+
+  document.getElementById("pending-requests").innerHTML =
+    pending.length === 0
+      ? "<p class='hint'>Nothing waiting for a decision.</p>"
+      : "<table class='week-table'><thead><tr><th>Employee</th><th>Week</th>" +
+        "<th>Room that week</th><th>Note</th><th></th></tr></thead><tbody>" +
+        pending.map(function (r) {
+          var employee = findEmployee(r.employeeId);
+          var week = weekByNumber(r.weekNumber);
+          var taken = occupancy[r.weekNumber].length;
+          var full = taken >= state.rules.maxConcurrentOnVacation;
+
+          return "<tr><td>" + employee.name + "</td>" +
+            "<td>" + describeWeek(week) + "</td>" +
+            "<td class='" + (full ? "total-over" : "total-ok") + "'>" +
+              taken + "/" + state.rules.maxConcurrentOnVacation +
+              (full ? " — full" : "") + "</td>" +
+            "<td>" + (r.note || "—") + "</td>" +
+            "<td class='action-cell'>" +
+              "<button class='btn btn-small btn-approve' data-request='" + r.id + "'>Approve</button> " +
+              "<button class='btn btn-small' data-deny='" + r.id + "'>Deny</button>" +
+            "</td></tr>";
+        }).join("") + "</tbody></table>";
+
+  document.getElementById("decided-requests").innerHTML =
+    decided.length === 0
+      ? "<p class='hint'>Nothing decided yet.</p>"
+      : "<table class='week-table'><thead><tr><th>Employee</th><th>Week</th>" +
+        "<th>Note</th><th>Status</th></tr></thead><tbody>" +
+        decided.map(function (r) {
+          var employee = findEmployee(r.employeeId);
+          return "<tr><td>" + employee.name + "</td><td>" + r.weekNumber + "</td>" +
+                 "<td>" + (r.note || "—") + "</td>" +
+                 "<td><span class='pill pill-" + r.status + "'>" + r.status + "</span></td></tr>";
+        }).join("") + "</tbody></table>";
+}
+
+function approveRequest(requestId) {
+  var request = state.requests.filter(function (r) { return r.id === requestId; })[0];
+  if (!request || request.status !== "pending") return;
+
+  var employee = findEmployee(request.employeeId);
+  var occupancy = weekOccupancy(state.employees, state.weeks);
+  var taken = occupancy[request.weekNumber].length;
+
+  // The admin can override a full week, but not without being told.
+  if (taken >= state.rules.maxConcurrentOnVacation) {
+    var proceed = confirm(
+      "Week " + request.weekNumber + " already has " + taken +
+      " people on vacation, which is the cap. Approving this will break the " +
+      "coverage rule and show up as a problem on the schedule.\n\nApprove anyway?");
+    if (!proceed) return;
+  }
+
+  request.status = "approved";
+  if (!hasWeek(employee, request.weekNumber)) {
+    employee.assignedWeeks.push({ week: request.weekNumber, method: "extra-request" });
+  }
+  render();
+}
+
+// An approved extra week is a promise already made, so regenerating the
+// schedule must not silently take it back. Any problem this causes shows up
+// in the rule check like anything else.
+function reapplyApprovedRequests() {
+  state.requests.forEach(function (request) {
+    if (request.status !== "approved") return;
+    var employee = findEmployee(request.employeeId);
+    if (employee && !hasWeek(employee, request.weekNumber)) {
+      employee.assignedWeeks.push({ week: request.weekNumber, method: "extra-request" });
+    }
+  });
+}
+
+function denyRequest(requestId) {
+  var request = state.requests.filter(function (r) { return r.id === requestId; })[0];
+  if (!request || request.status !== "pending") return;
+  request.status = "denied";
+  render();
+}
+
+// ---------------------------------------------------------------------------
 // The self-checks tab
 // ---------------------------------------------------------------------------
 
@@ -278,6 +482,7 @@ document.getElementById("btn-allocate").addEventListener("click", function () {
   var result = autoAllocate(state.rules, state.weeks);
   state.employees = result.employees;
   state.lastAllocation = result;
+  reapplyApprovedRequests();
 
   if (result.unresolved.length > 0) {
     setNote(result.unresolved.length + " employee(s) could not be fully placed — see the panel.");
@@ -293,6 +498,42 @@ document.getElementById("btn-clear").addEventListener("click", function () {
   state.employees.forEach(function (e) { e.assignedWeeks = []; });
   setNote("Schedule cleared.");
   render();
+});
+
+document.getElementById("employee-picker").addEventListener("change", function (event) {
+  state.selectedEmployeeId = event.target.value;
+  document.getElementById("request-note-msg").textContent = "";
+  renderEmployeeTab();
+});
+
+document.getElementById("btn-request").addEventListener("click", function () {
+  var weekNumber = Number(document.getElementById("request-week").value);
+  if (!weekNumber) return;
+
+  var noteField = document.getElementById("request-note");
+  var employee = findEmployee(state.selectedEmployeeId);
+
+  state.requests.push({
+    id: "req-" + Date.now() + "-" + state.requests.length,
+    employeeId: employee.id,
+    weekNumber: weekNumber,
+    note: noteField.value.trim(),
+    status: "pending"
+  });
+
+  noteField.value = "";
+  document.getElementById("request-note-msg").textContent =
+    "Request submitted for week " + weekNumber + ". It now needs an admin decision.";
+
+  render();
+});
+
+document.getElementById("pending-requests").addEventListener("click", function (event) {
+  var approve = event.target.closest("[data-request]");
+  if (approve) { approveRequest(approve.getAttribute("data-request")); return; }
+
+  var deny = event.target.closest("[data-deny]");
+  if (deny) { denyRequest(deny.getAttribute("data-deny")); }
 });
 
 document.getElementById("tabs").addEventListener("click", function (event) {
