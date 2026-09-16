@@ -11,32 +11,76 @@
 <div class="page">
   <header class="app-header">
     <h1>Team Vacation Scheduler</h1>
-    <p class="subtitle">Phase 1 — calendar check. The full scheduling app is being built in stages.</p>
+    <p class="subtitle" id="header-subtitle"></p>
   </header>
 
-  <section class="panel">
-    <h2>Rules in effect</h2>
-    <div id="rules-summary"></div>
+  <nav class="tabs" id="tabs">
+    <button class="tab-button active" data-tab="schedule">Schedule</button>
+    <button class="tab-button" data-tab="employees">Employees</button>
+    <button class="tab-button" data-tab="requests">Requests</button>
+    <button class="tab-button" data-tab="dashboard">Dashboard</button>
+    <button class="tab-button" data-tab="checks">Self-checks</button>
+  </nav>
+
+  <!-- ---------------------------------------------------------------- -->
+  <section class="tab-panel" id="tab-schedule">
+    <div class="toolbar">
+      <button class="btn btn-primary" id="btn-allocate">Run auto-allocation</button>
+      <button class="btn" id="btn-clear">Clear all</button>
+      <span class="toolbar-note" id="toolbar-note"></span>
+    </div>
+
+    <div class="schedule-layout">
+      <div class="grid-wrap">
+        <p class="hint">
+          <span class="swatch swatch-normal"></span> assigned
+          <span class="swatch swatch-summer"></span> summer
+          <span class="swatch swatch-lottery"></span> lottery week
+          <span class="swatch swatch-error"></span> rule problem
+          &nbsp;— click any square to add or remove a week.
+        </p>
+        <div class="grid-scroll">
+          <table class="grid" id="grid"></table>
+        </div>
+      </div>
+
+      <aside class="violations" id="violations"></aside>
+    </div>
   </section>
 
-  <section class="panel">
-    <h2>Self-checks</h2>
-    <div id="calendar-check"></div>
+  <!-- ---------------------------------------------------------------- -->
+  <section class="tab-panel hidden" id="tab-employees">
+    <div class="panel"><p class="hint">Coming in the next phase.</p></div>
   </section>
 
-  <section class="panel">
-    <h2>Auto-allocated schedule</h2>
-    <p class="hint">What the allocator produces from an empty calendar, with no hand-editing.</p>
-    <div id="allocation-preview"></div>
+  <section class="tab-panel hidden" id="tab-requests">
+    <div class="panel"><p class="hint">Coming in the next phase.</p></div>
   </section>
 
-  <section class="panel">
-    <h2>The 52 weeks</h2>
-    <p class="hint">
-      <span class="swatch swatch-summer"></span> summer week
-      <span class="swatch swatch-lottery"></span> lottery week (not bid on by seniority)
-    </p>
-    <table class="week-table" id="week-table"></table>
+  <section class="tab-panel hidden" id="tab-dashboard">
+    <div class="panel"><p class="hint">Coming in a later phase.</p></div>
+  </section>
+
+  <!-- ---------------------------------------------------------------- -->
+  <section class="tab-panel hidden" id="tab-checks">
+    <div class="panel">
+      <h2>Rules in effect</h2>
+      <div id="rules-summary"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Self-checks</h2>
+      <div id="self-checks"></div>
+    </div>
+
+    <div class="panel">
+      <h2>The 52 weeks</h2>
+      <p class="hint">
+        <span class="swatch swatch-summer"></span> summer week
+        <span class="swatch swatch-lottery"></span> lottery week
+      </p>
+      <table class="week-table" id="week-table"></table>
+    </div>
   </section>
 </div>
 
@@ -46,6 +90,6 @@
 <script src="validate.js"></script>
 <script src="allocate.js"></script>
 <script src="selfcheck.js"></script>
-<script src="preview.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
