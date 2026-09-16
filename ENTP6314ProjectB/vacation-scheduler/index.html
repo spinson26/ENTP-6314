@@ -108,7 +108,28 @@
   </section>
 
   <section class="tab-panel hidden" id="tab-dashboard">
-    <div class="panel"><p class="hint">Coming in a later phase.</p></div>
+    <div class="stat-row" id="stat-row"></div>
+
+    <div class="panel">
+      <h2>People on vacation each week</h2>
+      <p class="hint">
+        <span class="swatch swatch-normal"></span> normal
+        <span class="swatch swatch-summer"></span> summer
+        <span class="swatch swatch-lottery"></span> lottery
+        <span class="swatch swatch-error"></span> over the cap
+      </p>
+      <div id="coverage-chart"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Rule problems</h2>
+      <div id="dashboard-violations"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Every employee</h2>
+      <div id="dashboard-table"></div>
+    </div>
   </section>
 
   <!-- ---------------------------------------------------------------- -->

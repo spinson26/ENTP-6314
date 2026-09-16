@@ -68,6 +68,7 @@ function render() {
   renderSubtitle(violations);
   renderEmployeeTab();
   renderRequestsTab();
+  renderDashboard(violations);
   persist();
 }
 
@@ -418,6 +419,139 @@ function denyRequest(requestId) {
   if (!request || request.status !== "pending") return;
   request.status = "denied";
   render();
+}
+
+// ---------------------------------------------------------------------------
+// The dashboard
+// ---------------------------------------------------------------------------
+
+function renderDashboard(violations) {
+  var occupancy = weekOccupancy(state.employees, state.weeks);
+  var cap = state.rules.maxConcurrentOnVacation;
+  var errors = errorsOnly(violations);
+  var warnings = warningsOnly(violations);
+
+  var counts = state.weeks.map(function (w) { return occupancy[w.weekNumber].length; });
+  var busiest = Math.max.apply(null, counts);
+  var totalAssigned = state.employees.reduce(function (s, e) {
+    return s + e.assignedWeeks.length;
+  }, 0);
+  var pending = state.requests.filter(function (r) { return r.status === "pending"; }).length;
+
+  // ---- headline numbers ----
+  function tile(label, value, note, cls) {
+    return "<div class='stat-tile'><div class='stat-value " + (cls || "") + "'>" + value +
+           "</div><div class='stat-label'>" + label + "</div>" +
+           "<div class='stat-note'>" + note + "</div></div>";
+  }
+
+  document.getElementById("stat-row").innerHTML =
+    tile("Weeks assigned", totalAssigned,
+         "of " + (cap * state.weeks.length) + " possible") +
+    tile("Busiest week", busiest + " / " + cap,
+         busiest > cap ? "over the cap" : "within the cap",
+         busiest > cap ? "stat-bad" : "stat-good") +
+    tile("Requests waiting", pending,
+         pending === 0 ? "nothing to decide" : "need a decision") +
+    tile("Rule problems", errors.length,
+         warnings.length + " warning" + (warnings.length === 1 ? "" : "s"),
+         errors.length === 0 ? "stat-good" : "stat-bad");
+
+  // ---- the chart ----
+  // Scale leaves one person of headroom above the cap so the cap line sits
+  // inside the plot rather than on its ceiling.
+  var scale = Math.max(cap + 1, busiest);
+
+  var bars = state.weeks.map(function (week) {
+    var count = occupancy[week.weekNumber].length;
+    var over = count > cap;
+    var height = (count / scale) * 100;
+
+    var barClass = "bar";
+    if (over) barClass += " bar-over";
+    else if (week.isExcludedFromSeniority) barClass += " bar-lottery";
+    else if (week.isSummer) barClass += " bar-summer";
+    else barClass += " bar-normal";
+
+    var kind = week.isExcludedFromSeniority
+      ? "Lottery — " + week.holidays.join(", ")
+      : (week.isSummer ? "Summer" : "Normal");
+
+    var tip = "Week " + week.weekNumber + " (" + week.label + ")\n" +
+              kind + "\n" + count + " of " + cap + " people out" +
+              (over ? " — OVER THE CAP" : "");
+
+    // Only over-cap bars get a number, so the chart stays readable.
+    var label = over ? "<span class='bar-value'>" + count + "</span>" : "";
+    var tick = (week.weekNumber % 5 === 0 || week.weekNumber === 1)
+      ? week.weekNumber : "";
+
+    return "<div class='chart-col' title=\"" + tip + "\">" +
+           "<div class='bar-track'>" + label +
+           "<div class='" + barClass + "' style='height:" + height + "%'></div></div>" +
+           "<div class='chart-tick'>" + tick + "</div></div>";
+  }).join("");
+
+  document.getElementById("coverage-chart").innerHTML =
+    "<div class='chart'>" +
+      "<div class='chart-plot'>" +
+        "<div class='cap-line' style='bottom:" + ((cap / scale) * 100) + "%'>" +
+          "<span class='cap-label'>cap " + cap + "</span></div>" +
+        "<div class='chart-bars'>" + bars + "</div>" +
+      "</div>" +
+      "<p class='chart-caption'>Each bar is one week of " + state.rules.year +
+      ". Hover a bar for its dates.</p>" +
+    "</div>";
+
+  // ---- violations ----
+  var box = document.getElementById("dashboard-violations");
+  if (errors.length === 0 && warnings.length === 0) {
+    box.innerHTML = "<p class='all-clear'>No rules are being broken.</p>";
+  } else {
+    box.innerHTML = "<ul class='violation-list'>" +
+      errors.map(function (v) {
+        return "<li class='violation-error'>" + v.message + "</li>";
+      }).join("") +
+      warnings.map(function (v) {
+        return "<li class='violation-warning'>" + v.message + "</li>";
+      }).join("") + "</ul>";
+  }
+
+  // ---- per-employee table ----
+  var rows = state.employees.map(function (employee) {
+    var total = employee.assignedWeeks.length;
+    var ceiling = effectiveMaxWeeks(employee, state.requests);
+    var lotteryCount = employee.assignedWeeks.filter(function (a) {
+      var week = weekByNumber(a.week);
+      return week && week.isExcludedFromSeniority;
+    }).length;
+
+    var status = "Within the rules";
+    var statusClass = "total-ok";
+    if (total < employee.minWeeks) {
+      status = "Short by " + (employee.minWeeks - total);
+      statusClass = "total-under";
+    } else if (ceiling !== null && total > ceiling) {
+      status = "Over by " + (total - ceiling);
+      statusClass = "total-over";
+    }
+
+    return "<tr" + (employee.isSeniorTier ? " class='row-senior'" : "") + ">" +
+      "<td>" + employee.seniorityRank + "</td>" +
+      "<td>" + employee.name + "</td>" +
+      "<td>" + (employee.isSeniorTier ? "Senior" : "Staff") + "</td>" +
+      "<td>" + total + "</td>" +
+      "<td>" + employee.minWeeks + "</td>" +
+      "<td>" + (ceiling === null ? "—" : ceiling) + "</td>" +
+      "<td>" + summerWeekCountFor(employee, state.weeks) + "</td>" +
+      "<td>" + lotteryCount + "</td>" +
+      "<td class='" + statusClass + "'>" + status + "</td></tr>";
+  }).join("");
+
+  document.getElementById("dashboard-table").innerHTML =
+    "<table class='week-table'><thead><tr><th>Rank</th><th>Employee</th><th>Tier</th>" +
+    "<th>Weeks</th><th>Min</th><th>Max</th><th>Summer</th><th>Lottery</th>" +
+    "<th>Status</th></tr></thead><tbody>" + rows + "</tbody></table>";
 }
 
 // ---------------------------------------------------------------------------

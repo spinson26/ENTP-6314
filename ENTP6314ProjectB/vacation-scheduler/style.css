@@ -152,7 +152,11 @@ body {
 
 .grid-wrap {
   flex: 1 1 auto;
+  /* min-width AND max-width are both needed: without them the 52-column table
+     pushes this box wider than the page and the whole page scrolls sideways,
+     instead of just the grid scrolling inside its own frame. */
   min-width: 0;
+  max-width: 100%;
   background: #fff;
   border: 1px solid #dbe2e8;
   border-radius: 12px;
@@ -161,6 +165,7 @@ body {
 
 .grid-scroll {
   overflow-x: auto;
+  max-width: 100%;
   border: 1px solid #e6ebef;
   border-radius: 8px;
 }
@@ -321,6 +326,134 @@ body {
 
 .violation-error { background: #fbeaea; color: #7d1f1f; }
 .violation-warning { background: #fdf6e8; color: #7a5410; }
+
+/* ---- dashboard: headline numbers ---- */
+
+.stat-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-tile {
+  flex: 1 1 160px;
+  background: #fff;
+  border: 1px solid #dbe2e8;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.stat-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.stat-good { color: #2f6f4a; }
+.stat-bad  { color: #a02a2a; }
+
+.stat-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334049;
+  margin-top: 4px;
+}
+
+.stat-note {
+  font-size: 0.76rem;
+  color: #8695a1;
+  margin-top: 2px;
+}
+
+/* ---- dashboard: coverage chart ---- */
+
+.chart-plot {
+  position: relative;
+  height: 180px;
+  border-bottom: 1px solid #dbe2e8;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;              /* surface gap between adjacent bars */
+  height: 100%;
+}
+
+.chart-col {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bar-track {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 3px 3px 0 0;   /* rounded data-end, anchored to baseline */
+  transition: opacity 0.12s;
+}
+
+.chart-col:hover .bar { opacity: 0.72; }
+
+.bar-normal  { background: #2f7fd6; }
+.bar-summer  { background: #e8a33d; }
+.bar-lottery { background: #7d6bd0; }
+.bar-over    { background: #d64545; }
+
+.bar-value {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #a02a2a;
+}
+
+.cap-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 2px dashed #b3bfc9;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cap-label {
+  position: absolute;
+  right: 0;
+  top: -16px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #8695a1;
+  background: #fff;
+  padding: 0 4px;
+}
+
+.chart-tick {
+  font-size: 0.6rem;
+  color: #8695a1;
+  text-align: center;
+  height: 14px;
+  padding-top: 3px;
+}
+
+.chart-caption {
+  font-size: 0.78rem;
+  color: #8695a1;
+  margin: 8px 0 0;
+}
 
 /* ---- employee & request tabs ---- */
 
