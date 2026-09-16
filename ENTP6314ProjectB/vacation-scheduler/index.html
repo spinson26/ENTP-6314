@@ -3,47 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vacation Scheduler</title>
+<title>Team Vacation Scheduler</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="page">
-  <h1>Vacation Scheduler</h1>
-  <p class="subtitle">Plan and track upcoming trips.</p>
+  <header class="app-header">
+    <h1>Team Vacation Scheduler</h1>
+    <p class="subtitle">Phase 1 — calendar check. The full scheduling app is being built in stages.</p>
+  </header>
 
-  <form id="vacation-form">
-    <div class="field">
-      <label for="name">Trip name</label>
-      <input type="text" id="name" placeholder="e.g. Trip to Hawaii" required>
-    </div>
+  <section class="panel">
+    <h2>Rules in effect</h2>
+    <div id="rules-summary"></div>
+  </section>
 
-    <div class="field-row">
-      <div class="field">
-        <label for="start">Start date</label>
-        <input type="date" id="start" required>
-      </div>
-      <div class="field">
-        <label for="end">End date</label>
-        <input type="date" id="end" required>
-      </div>
-    </div>
-
-    <div class="field">
-      <label for="notes">Notes (optional)</label>
-      <textarea id="notes" placeholder="Anything you want to remember"></textarea>
-    </div>
-
-    <p id="error-message" class="error-message"></p>
-
-    <button type="submit">Add Vacation</button>
-  </form>
-
-  <h2>Upcoming Vacations</h2>
-  <p id="empty-message" class="empty-message">No vacations added yet.</p>
-  <div id="vacation-list"></div>
+  <section class="panel">
+    <h2>The 52 weeks</h2>
+    <p class="hint">
+      <span class="swatch swatch-summer"></span> summer week
+      <span class="swatch swatch-lottery"></span> lottery week (not bid on by seniority)
+    </p>
+    <div id="calendar-check"></div>
+    <table class="week-table" id="week-table"></table>
+  </section>
 </div>
 
-<script src="script.js"></script>
+<script src="rules.js"></script>
+<script src="employees.js"></script>
+<script src="calendar.js"></script>
+<script src="preview.js"></script>
 </body>
 </html>
