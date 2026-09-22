@@ -117,7 +117,7 @@ Combining 1, 2, 3 and 4: **a retailer-neutral app that plans to nutrient targets
 | Item | Status |
 |---|---|
 | Mealime Pro's former price | ❌ Not verified — the pricing page is gone post-shutdown-notice. |
-| MyFitnessPal "Premium+" tier | ❌ Not verified — `/premium/plus` returns 404; the premium page shows only one tier. |
+| MyFitnessPal "Premium+" tier | ⚠️ **Corrected in Section 5:** `/premium/plus` returns 404, but Apple's App Store listing names **Premium Plus** and describes "personalized meal plans, integrated grocery delivery." So MyFitnessPal does ship the full combined bundle; the retailer list remains unverified. |
 | MealPrepPro tier names | ⚠️ App Store shows four prices without labels; the $229.99 being lifetime is `[UNVERIFIED]`. |
 | Eat This Much free tier & pricing page | ⚠️ Their site requires JavaScript this tool can't run; prices come from the App Store instead. |
 | Funding for MacroFactor, MealPrepPro, Eat This Much, eMeals | ⚠️ "No funding found" ≠ "no funding." Crunchbase/PitchBook pages are paywalled to this tool. |
