@@ -1,6 +1,6 @@
 param(
   [string]$Src = "C:\Users\steph\AppData\Local\Temp\claude\C--Users-steph-ENTP-6314\aba2999a-a11f-487d-8747-f0b226a75e8e\scratchpad\pkg",
-  [string]$Out = "C:\Users\steph\ENTP 6314\WhichIdeaToKeep_Research.docx"
+  [string]$Out = "C:\Users\steph\ENTP 6314\11_WhichIdeaToKeep\WhichIdeaToKeep_Research.docx"
 )
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
