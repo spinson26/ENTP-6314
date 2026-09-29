@@ -1,0 +1,1286 @@
+[
+ {
+  "name": "Satiora",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Nourivo",
+  "apple": {
+   "exact": [
+    "Nourivo: GLP-1 & Protein (Tran Huong)",
+    "Nourivo (Kenta Waibel)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Nourivo: GLP-1 Protein"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Plenara",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "PLENARA [IC 028] Tu, Kaixin (INDIVIDUAL; China)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Provendi",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Macrova",
+  "apple": {
+   "exact": [
+    "Macrova: AI Calorie Counter (BARAN BERTAN OKTEM)",
+    "Macrova: AI Nutrition (Ruturaj Jena)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Macrova: AI Nutrition",
+    "Macrova"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Grocivo",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "Grocivo - Grocery List Manager",
+    "id:com.okondori.grocivo"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Pantrova",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Cartevia",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Leanvia",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "PantryPilot",
+  "apple": {
+   "exact": [
+    "Pantry Pilot: Smart Recipes (PANTRY PILOT PTY LTD)",
+    "Pantry Pilot (David Lafleur)",
+    "Pantry Pilot AI (ANDREI OLARU)",
+    "PantryPilot: Expiry Tracker (Efe OZTURK)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "PantryPilot",
+    "Pantry Pilot",
+    "Pantry Pilot: Smart Recipes",
+    "PantryPilot: AI Recipe Chef",
+    "id:com.pantrypilot.twa",
+    "id:nl.tikiwadigital.pantrypilot"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "CartPilot",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "PlatePilot",
+  "apple": {
+   "exact": [
+    "PlatePilots (PT PLUS IS A COMMISSION AGENT AND COMMISSION TRADING LLC)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "PlatePilot",
+    "PlatePilot Habit Tracker",
+    "PlatePilots",
+    "Plate Pilot: Meal Planner",
+    "id:com.platepilot.app",
+    "id:com.plaidscocooningltd.platepilothabittracke"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "SatietyCart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "LeanCart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "MacroCart",
+  "apple": {
+   "exact": [
+    "MacroCart: Scan & Plan (Asther Louie Cabardo)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "ProteinCart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "DoseCart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "DoseWise",
+  "apple": {
+   "exact": [
+    "DoseWise: Private Med Tracker (Arda Sozen)",
+    "DoseWise: GLP-1 Dose Tracker (Ahmet KARASAKAL)",
+    "Dosewise Companion (Aditya Bharti)",
+    "DoseWise: Medication Tracker (Dominik Drag)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "DoseWise Herbal Safety Tracker",
+    "id:com.dosewise"
+   ]
+  },
+  "uspto": {
+   "live": [
+    "DOSEWISE [(CANCELLED) IC 009,(CANCELLED) IC 010,IC 041] Koninklijke Philips N.V. (public limited liability company; NETHERLANDS)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "CartSense",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "PantryWise",
+  "apple": {
+   "exact": [
+    "PantryWise: Pantry Manager (Valiantum, LLC)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "PantryWise: Food Waste Tracker",
+    "PantryWise Food Storage Guide",
+    "id:com.pantrywisetheapp.mobile",
+    "id:com.homewise.pantrywise.food.storage.app"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "SmallPlate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "id:com.owner.senorganicsmallplate"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "taken"
+ },
+ {
+  "name": "HalfPlate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "Half Plate",
+    "HalfPlate"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "QuietPlate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "QuietPantry",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "HushPlate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "StillFork",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "SlowFork",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Larderly",
+  "apple": {
+   "exact": [
+    "Larderly: Grocery List Pantry (Ferran Espuna)",
+    "Larderly (Filippo Savorgiannakis)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Pantrist",
+  "apple": {
+   "exact": [
+    "Pantrist - Shopping List (Nico Lueg)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Pantrist"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Grocient",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Fedwell",
+  "apple": {
+   "exact": [
+    "FedWell: Calorie Counter (Allan Thompson)",
+    "Fedwell: Meal Planner (SIMONI K LULACA)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "FEDWELL [IC 031] Bones & Co. Pet Foods (LIMITED LIABILITY COMPANY; TEXAS, USA)",
+    "FEDWELL [IC 042,IC 041] Hushful Ltd (COMPANY; United Kingdom)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "Provisioner",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "id:com.mobileiron.client.android.nfcprovisioner",
+    "id:wifi.analytics.provisioner",
+    "id:com.trivore.nfcdeviceprovisioner",
+    "id:com.fullykiosk.provisioner"
+   ]
+  },
+  "uspto": {
+   "live": [
+    "PROVISIONER [IC 012,IC 037] Astroscale U.S. Inc. (CORPORATION; Nevada, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Quartermeal",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Cartwright",
+  "apple": {
+   "exact": [
+    "Cartwright App (makoto morita)",
+    "Cartwright's Plumbing (Christopher Fresh)",
+    "Cartwright (Ryan Watts)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Cartwright's Plumbing",
+    "id:com.servzito.cartwrightsplumbing"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "Fetchfork",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Dietdrop",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "DIETDROP [IC 005] ClearH2O, Inc. (CORPORATION; MAINE, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Mealmover",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Satiate",
+  "apple": {
+   "exact": [
+    "Satiate - Calorie & Fullness (VAZGEN OGANNISIAN)",
+    "Satiated Life (Satiated Life Nutrition PLLC)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Satiate",
+    "id:com.satiate.myapp"
+   ]
+  },
+  "uspto": {
+   "live": [
+    "SATIATE [IC 009,IC 042,IC 044] Brandon Goethals (INDIVIDUAL; USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Enoughly",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Lowtide Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Tessellate",
+  "apple": {
+   "exact": [
+    "Tessellate (Sam Gillard)",
+    "Tessellate 360 - Watch Game (Tocapp Games S.L.)",
+    "Tessellate! (Plunge Studios LLC)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "TESSELLATE [IC 042,IC 035] Forum AI, Inc. (CORPORATION; Tennessee, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Proteinly",
+  "apple": {
+   "exact": [
+    "Proteinly: Protein Tracker (Harsha Dubey)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Proteinly, LLC",
+    "id:io.proteinly"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Fuelcart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Nourcart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Macroroute",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Plateway",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Dosewell",
+  "apple": {
+   "exact": [
+    "Dosewell - Medication Reminder (Jarryd Palek)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Kitchenward",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Morselly",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Pantrymind",
+  "apple": {
+   "exact": [
+    "PantryMind (Mateen Aminian)",
+    "PantryMind AI (Mustapha OUBOUZ)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "PantryMind - Pantry Tracker",
+    "id:com.fdom.pantrymind"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Satietta",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Dosely",
+  "apple": {
+   "exact": [
+    "Dosely - Peptide Tracker (EFN Group LLC)",
+    "Dosely - Peptide GLP-1 Tracker (Exploring Studios LLC)",
+    "Dosely: Pool & Hot Tub Care (BULPARA TEKNOLOJI LIMITED SIRKETI)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Dosely",
+    "Dosely - Peptide Tracker",
+    "Dosely: GLP-1 Peptide Tracker",
+    "Dosely Pro",
+    "Dosely: Pill & Med Reminder",
+    "Dosely - Track Medications"
+   ]
+  },
+  "uspto": {
+   "live": [
+    "DOSELY [IC 005] Dosely, Inc. (CORPORATION; DELAWARE, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "taken"
+ },
+ {
+  "name": "Portionly",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "Portionly: AI Calorie Counter"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "PortionPilot",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Cartfull",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "CARTFULL [IC 035] KM Liquidator, LLC (LIMITED LIABILITY COMPANY; MINNESOTA, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "GLPantry",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "GLPlate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Proteinpath",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Tinyplate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "TINYPLATE LLC",
+    "id:app.tinyplate"
+   ]
+  },
+  "uspto": {
+   "live": [
+    "TINYPLATE [IC 009,IC 042] TinyPlate LLC (LIMITED LIABILITY COMPANY; New Jersey, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "QuietCart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Steadyplate",
+  "apple": {
+   "exact": [
+    "SteadyPlate: Nutrition AI (Orkhan Hasanbeck)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "SteadyCart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Wellstocked",
+  "apple": {
+   "exact": [
+    "Wellstocked (EZEKIEL VILLALUZ GAVIERES)",
+    "Wellstocked: Cocktail Recipes (JOSEPH WILLIAM SALVANESCHI III)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "Restockr",
+  "apple": {
+   "exact": [
+    "Restockr X (OG Giveaways Corporation)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "RestockR",
+    "id:com.restockr.app"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Mealsteward",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Pantrysteward",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Fillwell",
+  "apple": {
+   "exact": [
+    "FillWell (Gavin Sparks)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Evenkeel Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Smallbite",
+  "apple": {
+   "exact": [
+    "smallBite (PICDOT)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "smallBite",
+    "Small Bites - Make Tasks Easy",
+    "id:com.small_bite.taskapp"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Lessplate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Satiety Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "SATIETY KITCHEN [IC 030,IC 005,IC 009,IC 041] HYDROSWELL LLC (LIMITED LIABILITY COMPANY; Utah, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Hushcart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Nourishcart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Plenticart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Fullplate AI",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ }
+]
