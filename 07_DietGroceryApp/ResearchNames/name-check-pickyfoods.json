@@ -1,0 +1,64 @@
+[
+ {
+  "name": "PickyFoods",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Picky Foods",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Picky Food",
+  "apple": {
+   "exact": [
+    "Picky: Food Ingredient Scanner (Taner Sezer)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "PickyFood",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ }
+]

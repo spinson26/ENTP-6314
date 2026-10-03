@@ -56,6 +56,20 @@ These are usable if the product launches on **get[name].com** or **[name].app**.
 - **CartPilot, Leanvia:** the .com is an active business under the same name.
 - **Pantrova:** PANTROVE is a live mark in classes 9 and 42 (software).
 
+## Update 2026-10-02: PickyFoods
+
+The landing page now uses **PickyFoods**, so the name got the same checks. The full results are in `name-check-pickyfoods.md`.
+
+| Check | Result |
+|---|---|
+| App Store / Google Play, exact name | No app called PickyFoods |
+| USPTO, exact name | No live PICKYFOODS or PICKY FOODS mark |
+| pickyfoods.com | **Taken.** Registered since 2016 and renewed through 2031, with no live site |
+| pickyfoods.app, getpickyfoods.com | Free |
+| Close conflicts | Two pending class 9 trademark applications cover food and diet apps: **PICKY?** (dietary preferences and allergies) and **PICKY CHEFS** (recipes, meal plans and grocery lists). At least 20 US apps already use "Picky," including Eat Picky, Picky - What's for dinner?, Picky - Grocery Shopping List and Picky Plates. |
+
+**Verdict:** PickyFoods is not taken as an exact name, but the risk is **medium to high**. "Picky" is crowded in this exact category, hard to trademark, and it reads as "picky eater" (kids and allergies) rather than weight loss. It's fine for a demo page, but it ranks below the two names recommended below.
+
 ## Recommendation
 
 **Lead with SatietyCart. Keep HushPlate as the backup.** SatietyCart is the only finalist that names both the GLP-1 benefit and the ordering agent, and its .com, .app and get- domains are all open. HushPlate is the stronger brand for a GLP-1-first launch, because "food noise" is the words those users already use. Before announcing either name: register the .com and .app, file a USPTO intent-to-use application in classes 9 (app software), 35 (online grocery ordering services) and 44 (nutrition information), and have counsel run a full clearance search.

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PickyFoods</title>
+<meta name="description" content="PickyFoods turns your nutrition targets into a meal plan, then an AI agent orders the groceries.">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1d2321;
+    --muted: #5b6662;
+    --border: #e2e0da;
+    --accent: #2f6b4f;
+    --accent-soft: #e8f0eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141816;
+      --surface: #1b201e;
+      --text: #ecefed;
+      --muted: #a3ada9;
+      --border: #2e3532;
+      --accent: #7cc4a0;
+      --accent-soft: #1f2d26;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141816;
+    --surface: #1b201e;
+    --text: #ecefed;
+    --muted: #a3ada9;
+    --border: #2e3532;
+    --accent: #7cc4a0;
+    --accent-soft: #1f2d26;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  header { border-bottom: 1px solid var(--border); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .brand span { color: var(--accent); }
+  .tag {
+    font-size: 0.8rem; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px;
+  }
+
+  .hero {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    padding: 72px 0 80px;
+  }
+  .eyebrow {
+    color: var(--accent); font-weight: 600; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px;
+  }
+  h1 {
+    font-size: clamp(2rem, 4.2vw, 2.85rem); line-height: 1.15; letter-spacing: -0.02em;
+    margin: 0 0 20px; text-wrap: balance;
+  }
+  .lede { color: var(--muted); margin: 0 0 32px; max-width: 34em; }
+
+  ul.benefits { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+  ul.benefits li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; }
+  .check {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center; margin-top: 1px;
+  }
+  .benefits strong { display: block; }
+  .benefits p { margin: 2px 0 0; color: var(--muted); font-size: 0.96rem; }
+
+  .shot {
+    aspect-ratio: 9 / 16; max-height: 560px; width: 100%; max-width: 320px; justify-self: center;
+    border: 2px dashed var(--border); border-radius: 28px; background: var(--surface);
+    display: grid; place-items: center; text-align: center; padding: 24px;
+    color: var(--muted); font-size: 0.9rem;
+  }
+  .shot b { display: block; color: var(--text); font-size: 1rem; margin-bottom: 4px; }
+
+  footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+  footer .wrap { padding-top: 24px; padding-bottom: 32px; }
+
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 56px; }
+    .shot { max-width: 260px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Picky<span>Foods</span></div>
+    <div class="tag">Concept preview</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">For anyone losing weight, including on GLP-1s</p>
+      <h1>Losing weight means juggling a tracker, a recipe app, and a grocery app that don't talk to each other.</h1>
+      <p class="lede">PickyFoods pulls your nutrition targets, recipes, and meal plan into one place. Then an AI agent builds the grocery order for you.</p>
+
+      <ul class="benefits">
+        <li>
+          <span class="check" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>
+          </span>
+          <div>
+            <strong>One plan built around your targets</strong>
+            <p>Calories, protein, allergies, and food dislikes in one profile, with smaller, protein-first portions if you're on a GLP-1.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>
+          </span>
+          <div>
+            <strong>Recipes that already fit</strong>
+            <p>Every meal is picked to match your plan, so you're not checking each recipe's numbers yourself.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>
+          </span>
+          <div>
+            <strong>Groceries ordered for you</strong>
+            <p>An AI agent turns the week's meals into a cart at your store. You review it and approve before anything is bought.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="shot" role="img" aria-label="Placeholder for an app screenshot">
+      <div><b>App screenshot</b>Placeholder for the weekly plan and cart screen</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">PickyFoods is a concept in development. Not medical advice; talk to your doctor about your diet and medication.</div>
+</footer>
+
+</body>
+</html>
