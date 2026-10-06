@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HushPlate Updated</title>
+<meta name="description" content="HushPlate turns your nutrition targets into a meal plan, then an AI agent orders the groceries.">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1d2321;
+    --muted: #5b6662;
+    --border: #e2e0da;
+    --accent: #2f6b4f;
+    --accent-soft: #e8f0eb;
+    --screen: #f6f5f1;
+    --takeout: #b5651d;
+    --takeout-soft: #f8ece0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141816;
+      --surface: #1b201e;
+      --text: #ecefed;
+      --muted: #a3ada9;
+      --border: #2e3532;
+      --accent: #7cc4a0;
+      --accent-soft: #1f2d26;
+      --screen: #222826;
+      --takeout: #e3a265;
+      --takeout-soft: #3a2a1c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141816;
+    --surface: #1b201e;
+    --text: #ecefed;
+    --muted: #a3ada9;
+    --border: #2e3532;
+    --accent: #7cc4a0;
+    --accent-soft: #1f2d26;
+      --screen: #222826;
+      --takeout: #e3a265;
+      --takeout-soft: #3a2a1c;
+      color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  header { border-bottom: 1px solid var(--border); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+  .brand span { color: var(--accent); }
+  .tag {
+    font-size: 0.8rem; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px;
+  }
+
+  .hero {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    padding: 72px 0 80px;
+  }
+  .eyebrow {
+    color: var(--accent); font-weight: 600; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px;
+  }
+  h1 {
+    font-size: clamp(2rem, 4.2vw, 2.85rem); line-height: 1.15; letter-spacing: -0.02em;
+    margin: 0 0 20px; text-wrap: balance;
+  }
+  .lede { color: var(--muted); margin: 0 0 32px; max-width: 34em; }
+
+  ul.benefits { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+  ul.benefits li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; }
+  .check {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center; margin-top: 1px;
+  }
+  .benefits strong { display: block; }
+  .benefits p { margin: 2px 0 0; color: var(--muted); font-size: 0.96rem; }
+
+  /* Four app screenshots, one per type of user, in the spot the single placeholder used to hold. */
+  .shots {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; min-width: 0;
+  }
+  .shots figure { margin: 0; display: grid; grid-row: span 2; grid-template-rows: subgrid; gap: 10px; min-width: 0; }
+  .shots figcaption { display: grid; grid-template-columns: 22px 1fr; gap: 8px; font-size: 0.8rem; line-height: 1.4; }
+  .shots figcaption strong { display: block; }
+  .shots figcaption span.d { color: var(--muted); }
+  .num {
+    width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--border);
+    display: grid; place-items: center; font-weight: 700; font-size: 0.75rem; color: var(--accent);
+  }
+  .shots-note { grid-column: 1 / -1; color: var(--muted); font-size: 0.75rem; margin: 4px 0 0; }
+
+  .phone {
+    width: 100%; max-width: 240px; justify-self: center; display: flex;
+    border: 1px solid var(--border); border-radius: 26px; padding: 6px; background: var(--surface);
+  }
+  .screen {
+    flex: 1; display: flex; flex-direction: column; gap: 6px; overflow: hidden;
+    background: var(--screen); border-radius: 21px; padding: 9px 8px 0;
+    font-size: 10px; line-height: 1.35; font-variant-numeric: tabular-nums;
+  }
+  .status { display: flex; justify-content: space-between; font-weight: 600; font-size: 9px; padding: 0 6px; }
+  .app-head { display: flex; justify-content: space-between; align-items: baseline; padding: 0 2px; }
+  .app-head b { font-size: 12.5px; }
+  .app-head span, .target { color: var(--muted); font-size: 9px; }
+  .target { padding: 0 2px; margin-top: -4px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 6px 7px; display: grid; gap: 4px; }
+  .card-title { display: flex; justify-content: space-between; align-items: baseline; gap: 4px; }
+  .card-title b { font-size: 10.5px; }
+  .card-title span { color: var(--muted); font-size: 9px; white-space: nowrap; }
+  .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; text-align: center; }
+  .day { display: grid; gap: 2px; justify-items: center; color: var(--muted); font-size: 8.5px; }
+  .day.today { color: var(--text); font-weight: 700; }
+  .day i { display: block; width: 100%; max-width: 18px; height: 5px; border-radius: 2px; background: var(--accent); }
+  .day i.t { background: var(--takeout); }
+  .legend { display: flex; gap: 8px; color: var(--muted); font-size: 8.5px; }
+  .legend span::before { content: ""; display: inline-block; width: 7px; height: 5px; border-radius: 2px; margin-right: 3px; background: var(--accent); }
+  .legend span.t::before { background: var(--takeout); }
+  .meal { display: grid; grid-template-columns: 1fr auto; gap: 0 4px; padding-top: 4px; border-top: 1px solid var(--border); }
+  .meal:first-of-type { border-top: 0; padding-top: 0; }
+  .meal .when { grid-column: 1 / -1; color: var(--muted); font-size: 8.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .meal .what { font-weight: 600; }
+  .meal .nums, .muted { color: var(--muted); }
+  .meal .nums { white-space: nowrap; }
+  .agent { border-color: var(--accent); background: var(--accent-soft); }
+  .takeout { border-color: var(--takeout); background: var(--takeout-soft); }
+  .label { font-size: 8.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); }
+  .takeout .label { color: var(--takeout); }
+  .row { display: flex; justify-content: space-between; gap: 4px; }
+  .row span:last-child { font-weight: 600; white-space: nowrap; }
+  .row.muted span:last-child { font-weight: 400; }
+  .btn { display: block; text-align: center; border-radius: 7px; padding: 4px; font-weight: 600; background: var(--accent); color: var(--surface); }
+  .aisle { font-size: 8.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 2px; }
+  .item { display: grid; grid-template-columns: 10px 1fr auto; gap: 5px; align-items: center; }
+  .box { width: 10px; height: 10px; border: 1.5px solid var(--muted); border-radius: 3px; }
+  .item.done .box { background: var(--accent); border-color: var(--accent); }
+  .item.done span:nth-child(2) { color: var(--muted); text-decoration: line-through; }
+  .item span:last-child { color: var(--muted); }
+  .bar { height: 4px; border-radius: 2px; background: var(--border); overflow: hidden; }
+  .bar b { display: block; height: 100%; background: var(--accent); }
+  .tabs {
+    margin: auto -8px 0; padding: 6px 0 9px; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center;
+    border-top: 1px solid var(--border); background: var(--surface); color: var(--muted); font-size: 8.5px;
+  }
+  .tabs .on { color: var(--accent); font-weight: 700; }
+
+  footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+  footer .wrap { padding-top: 24px; padding-bottom: 32px; }
+
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 56px; }
+  }
+  @media (max-width: 520px) {
+    .shots { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Hush<span>Plate</span></div>
+    <div class="tag">Concept preview</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">For anyone losing weight, including on GLP-1s</p>
+      <h1>Losing weight means juggling a tracker, a recipe app, and a grocery app that don't talk to each other.</h1>
+      <p class="lede">HushPlate pulls your nutrition targets, recipes, and meal plan into one place. Then an AI agent builds the grocery order for you.</p>
+
+      <ul class="benefits">
+        <li>
+          <span class="check" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>
+          </span>
+          <div>
+            <strong>One plan built around your targets</strong>
+            <p>Calories, protein, allergies, and food dislikes in one profile, with smaller, protein-first portions if you're on a GLP-1.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>
+          </span>
+          <div>
+            <strong>Recipes that already fit</strong>
+            <p>Every meal is picked to match your plan, so you're not checking each recipe's numbers yourself.</p>
+          </div>
+        </li>
+        <li>
+          <span class="check" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>
+          </span>
+          <div>
+            <strong>Groceries ordered for you</strong>
+            <p>An AI agent turns the week's meals into a cart at your store. You review it and approve before anything is bought.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="shots">
+
+      <figure>
+        <div class="phone" role="img" aria-label="App screenshot for user 1: all 21 meals planned, today's meals, and a grocery cart the AI agent has ready for delivery">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>5G</span></div>
+            <div class="app-head"><b>This week</b><span>Oct 5–11</span></div>
+            <div class="target">1,600 cal · 120 g protein a day</div>
+            <div class="card">
+              <div class="card-title"><b>21 of 21 planned</b><span>All cooked</span></div>
+              <div class="week">
+                <div class="day">M<i></i><i></i><i></i></div>
+                <div class="day today">T<i></i><i></i><i></i></div>
+                <div class="day">W<i></i><i></i><i></i></div>
+                <div class="day">T<i></i><i></i><i></i></div>
+                <div class="day">F<i></i><i></i><i></i></div>
+                <div class="day">S<i></i><i></i><i></i></div>
+                <div class="day">S<i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title"><b>Today</b><span>1,320 cal · 105 g</span></div>
+              <div class="meal"><span class="when">Breakfast</span><span class="what">Greek yogurt, berries</span><span class="nums">310</span></div>
+              <div class="meal"><span class="when">Lunch</span><span class="what">Chicken quinoa bowl</span><span class="nums">470</span></div>
+              <div class="meal"><span class="when">Dinner</span><span class="what">Salmon, broccoli</span><span class="nums">540</span></div>
+            </div>
+            <div class="card agent">
+              <span class="label">AI agent · cart ready</span>
+              <div class="row"><span>34 items, 21 meals</span><span>$118.40</span></div>
+              <div class="row muted"><span>Delivery Thu 5–7 PM</span><span>2 swaps</span></div>
+              <span class="btn">Review and approve</span>
+            </div>
+            <div class="tabs"><span class="on">Plan</span><span>Recipes</span><span>Groceries</span><span>Me</span></div>
+          </div>
+        </div>
+        <figcaption>
+          <span class="num">1</span>
+          <div><strong>All meals, AI agent delivers</strong><span class="d">The agent orders groceries for all 21 meals.</span></div>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <div class="phone" role="img" aria-label="App screenshot for user 2: all 21 meals planned and a shopping list sorted by store aisle, with some items checked off">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>5G</span></div>
+            <div class="app-head"><b>Shopping list</b><span>Oct 5–11</span></div>
+            <div class="target">For 21 planned meals</div>
+            <div class="card">
+              <div class="card-title"><b>12 of 34 items</b><span>Est. $112</span></div>
+              <div class="bar"><b style="width: 35%"></b></div>
+              <span class="muted">Sorted by store aisle</span>
+            </div>
+            <div class="card">
+              <div class="aisle">Produce</div>
+              <div class="item done"><span class="box"></span><span>Broccoli</span><span>2 heads</span></div>
+              <div class="item done"><span class="box"></span><span>Baby spinach</span><span>10 oz</span></div>
+              <div class="item"><span class="box"></span><span>Blueberries</span><span>2 pints</span></div>
+              <div class="aisle">Meat and seafood</div>
+              <div class="item done"><span class="box"></span><span>Chicken breast</span><span>2 lb</span></div>
+              <div class="item"><span class="box"></span><span>Salmon fillets</span><span>1 lb</span></div>
+              <div class="aisle">Dairy</div>
+              <div class="item"><span class="box"></span><span>Greek yogurt</span><span>32 oz</span></div>
+              <span class="muted">+ 28 more items</span>
+            </div>
+            <div class="card">
+              <div class="card-title"><b>Cooking tonight</b><span>540 cal</span></div>
+              <span>Salmon, broccoli, brown rice</span>
+            </div>
+            <div class="tabs"><span>Plan</span><span>Recipes</span><span class="on">List</span><span>Me</span></div>
+          </div>
+        </div>
+        <figcaption>
+          <span class="num">2</span>
+          <div><strong>All meals, shops at the store</strong><span class="d">One list for all 21 meals, sorted by aisle.</span></div>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <div class="phone" role="img" aria-label="App screenshot for user 3: 15 cooked and 6 takeout meals for the week, tonight's takeout pick, and a smaller AI agent grocery cart">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>5G</span></div>
+            <div class="app-head"><b>This week</b><span>Oct 5–11</span></div>
+            <div class="target">1,600 cal · 120 g protein a day</div>
+            <div class="card">
+              <div class="card-title"><b>15 cooked · 6 takeout</b></div>
+              <div class="week">
+                <div class="day">M<i></i><i></i><i class="t"></i></div>
+                <div class="day today">T<i></i><i></i><i class="t"></i></div>
+                <div class="day">W<i></i><i></i><i></i></div>
+                <div class="day">T<i></i><i class="t"></i><i></i></div>
+                <div class="day">F<i></i><i></i><i class="t"></i></div>
+                <div class="day">S<i></i><i class="t"></i><i class="t"></i></div>
+                <div class="day">S<i></i><i></i><i></i></div>
+              </div>
+              <div class="legend"><span>Cooked</span><span class="t">Takeout</span></div>
+            </div>
+            <div class="card takeout">
+              <span class="label">Tonight · takeout pick</span>
+              <b>Mediterranean grill</b>
+              <span>Chicken plate, salad instead of rice</span>
+              <div class="row muted"><span>560 cal · 48 g</span><span>Fits today</span></div>
+            </div>
+            <div class="card agent">
+              <span class="label">AI agent · cart ready</span>
+              <div class="row"><span>24 items, 15 meals</span><span>$84.10</span></div>
+              <div class="row muted"><span>Delivery Thu 5–7 PM</span></div>
+              <span class="btn">Review and approve</span>
+            </div>
+            <div class="tabs"><span class="on">Plan</span><span>Recipes</span><span>Groceries</span><span>Me</span></div>
+          </div>
+        </div>
+        <figcaption>
+          <span class="num">3</span>
+          <div><strong>Some meals, AI agent delivers, plus takeout</strong><span class="d">The agent orders only for cooked meals.</span></div>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <div class="phone" role="img" aria-label="App screenshot for user 4: 12 cooked and 9 takeout meals for the week, a takeout pick, and a shorter shopping list for the store">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>5G</span></div>
+            <div class="app-head"><b>This week</b><span>Oct 5–11</span></div>
+            <div class="target">1,600 cal · 120 g protein a day</div>
+            <div class="card">
+              <div class="card-title"><b>12 cooked · 9 takeout</b></div>
+              <div class="week">
+                <div class="day">M<i></i><i class="t"></i><i></i></div>
+                <div class="day today">T<i></i><i></i><i class="t"></i></div>
+                <div class="day">W<i></i><i class="t"></i><i></i></div>
+                <div class="day">T<i></i><i class="t"></i><i></i></div>
+                <div class="day">F<i></i><i class="t"></i><i class="t"></i></div>
+                <div class="day">S<i></i><i class="t"></i><i class="t"></i></div>
+                <div class="day">S<i></i><i></i><i class="t"></i></div>
+              </div>
+              <div class="legend"><span>Cooked</span><span class="t">Takeout</span></div>
+            </div>
+            <div class="card takeout">
+              <span class="label">Wed lunch · takeout pick</span>
+              <b>Sushi bar</b>
+              <span>Sashimi combo, seaweed salad</span>
+              <div class="row muted"><span>430 cal · 39 g</span><span>Fits Wed</span></div>
+            </div>
+            <div class="card">
+              <div class="card-title"><b>Shopping list</b><span>19 items · ~$61</span></div>
+              <div class="item"><span class="box"></span><span>Eggs</span><span>1 dozen</span></div>
+              <div class="item"><span class="box"></span><span>Chicken thighs</span><span>1.5 lb</span></div>
+              <span class="muted">+ 17 more, for 12 meals</span>
+            </div>
+            <div class="tabs"><span class="on">Plan</span><span>Recipes</span><span>List</span><span>Me</span></div>
+          </div>
+        </div>
+        <figcaption>
+          <span class="num">4</span>
+          <div><strong>Some meals, shops at the store, plus takeout</strong><span class="d">A shorter list, only for cooked meals.</span></div>
+        </figcaption>
+      </figure>
+
+      <p class="shots-note">Illustrative mockups. Meals, prices and numbers are examples.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">HushPlate is a concept in development. Not medical advice; talk to your doctor about your diet and medication.</div>
+</footer>
+
+</body>
+</html>
