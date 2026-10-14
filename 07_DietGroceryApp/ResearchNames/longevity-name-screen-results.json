@@ -1,0 +1,1115 @@
+[
+ {
+  "name": "Longplate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Longtable",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "Longcart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Longbite",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Longlarder",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Long Harvest",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Everplate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "EVERPLATE [IC 001] Atotech Deutschland GmbH (CORPORATION; GERMANY)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Evertable",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Evergrain",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "EVERGRAIN [IC 019] EPOCH Composite Products, Inc. (CORPORATION; DELAWARE, USA)",
+    "EVERGRAIN [IC 024,IC 021] Marina Kolyandra (INDIVIDUAL; USA)",
+    "EVERGRAIN [IC 030,IC 031] Ravinder Singh (INDIVIDUAL; USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Spanplate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "SpanCart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "SPANCART [IC 012] Promise to Perform Industries, Inc. (CORPORATION; Pennsylvania, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Spanwise",
+  "apple": {
+   "exact": [
+    "Spanwise (Aytac YILMAZ)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "Spanfull",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Vitaspan",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "VitaSpan: Medicare Care Finder",
+    "id:com.choralsoft.vitaspan"
+   ]
+  },
+  "uspto": {
+   "live": [
+    "VITASPAN [IC 005] HumaSpan, LLC (LIMITED LIABILITY COMPANY; Florida, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Healthspan Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Healthspan Cart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Hundred Table",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Hundredfold Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Centplate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Century Pantry",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Telomeal",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Telomere Table",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Mitomeal",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Mitoplate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Oldgrowth",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "Old-Growth Trees"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Oldgrowth Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Tortoise Table",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "id:com.stevelib.thetortoisetable"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Olive Years",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Oliveyard",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Grovecart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Sagecart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Sage Pantry",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Eightyfull",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Hara Plate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Okiplate",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Perennia",
+  "apple": {
+   "exact": [
+    "Perennia: Orchard Tools (Perennia Food & Agriculture Incorporated)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "PERENNIA [IC 010] Cyberonics, Inc. (CORPORATION; DELAWARE, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "Perennial Pantry",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Plantspan",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Seasonspan",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Lifelong Larder",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Ripe Years",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Vivacart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "VIVACART [IC 010] CardioQuip, LLC (LIMITED LIABILITY COMPANY; TEXAS, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Vivarra",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Vitalcart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Primeplate",
+  "apple": {
+   "exact": [
+    "PrimePlates (PrimePlates)"
+   ]
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Steadfork",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Decades Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Agelesscart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Slowage",
+  "apple": {
+   "exact": [
+    "Slow Age (Junmo Park)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Slow Age - Food Aging Scanner",
+    "id:com.toemtech.slowage"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Polyphenol Pantry",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Fiberfirst",
+  "apple": {
+   "exact": [
+    "FiberFirst TV (TiVo Platform Technologies LLC)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "FiberFirst TV"
+   ]
+  },
+  "uspto": {
+   "live": [
+    "FIBERFIRST [IC 038] Generate-Ubiquity Management, LLC (LIMITED LIABILITY COMPANY; DELAWARE, USA)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Longevora",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "LONGEVORA [IC 005] Yufeng Sun (INDIVIDUAL; China)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Longevicart",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Elderleaf",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Rootspan",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Verdant Table",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Yearsful",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Kindleaf",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Ageproof Pantry",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Lifespan Larder",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Evermeal",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Tenthdecade",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": [
+    "Tenth Decade",
+    "Tenthdecade"
+   ]
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Wellyears",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Graywise",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Nonagen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Livelong Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Fullspan",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "free"
+ },
+ {
+  "name": "Goodyears Kitchen",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": []
+  },
+  "com": "free",
+  "app": "free",
+  "getcom": "free"
+ },
+ {
+  "name": "Aevum",
+  "apple": {
+   "exact": [
+    "Aevum – Device Track (Christopher Jensen)",
+    "Aevum - History Time Machine (Aleksandr Moskotin)",
+    "Aevum - Countdown & Days (Swen Knies)"
+   ]
+  },
+  "play": {
+   "exact": [
+    "Aevum",
+    "Aevum: Auto Time Tracker",
+    "Aevum Health Hub",
+    "Aevum Climb Fusion Puzzle",
+    "Aevum Drift",
+    "Aevum - Age Calculator"
+   ]
+  },
+  "uspto": {
+   "live": [
+    "AEVUM [IC 009] Elise Rose Sutherland (INDIVIDUAL; United Kingdom)",
+    "AEVUM [IC 021,IC 033] Southcorp Brands Pty Limited (PROFESSIONAL LIMITED LIABILITY COMPANY; AUSTRALIA)",
+    "AEVUM [IC 045] Aevum Legal PLLC (LIMITED LIABILITY COMPANY; Florida, USA)",
+    "AEVUM [IC 041] OLIVIA SALMEN AESTHETICS PLLC (LIMITED LIABILITY COMPANY; Tennessee, USA)",
+    "AEVUM [IC 005] AEVUM LABS LIMITED (Limited Company; NEW ZEALAND)"
+   ]
+  },
+  "com": "taken",
+  "app": "taken",
+  "getcom": "taken"
+ },
+ {
+  "name": "Aeviva",
+  "apple": {
+   "exact": []
+  },
+  "play": {
+   "exact": []
+  },
+  "uspto": {
+   "live": [
+    "AEVIVA [IC 005] AEVIVA INC (CORPORATION; Delaware, USA)",
+    "AEVIVA [IC 004] MILLENNIUM INTERNATIONAL TRADE (CORPORATION; Canada)"
+   ]
+  },
+  "com": "taken",
+  "app": "free",
+  "getcom": "free"
+ }
+]
