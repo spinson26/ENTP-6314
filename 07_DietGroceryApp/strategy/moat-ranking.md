@@ -1,7 +1,7 @@
 # Moat Ranking: HushPlate
 
 **Prepared:** October 16, 2026
-**Sources:** [strategy/spec-audit.md](spec-audit.md), `prd-1.md` (15:23 version) and [research/competitors.md](../research/competitors.md).
+**Sources:** [strategy/spec-audit.md](spec-audit.md), `prd-1.md` (15:27 version) and [research/competitors.md](../research/competitors.md).
 **A note on sources:** spec-audit.md audits the *original* prd.md, not prd-1.md. The current audit is [spec-audit-1.md](spec-audit-1.md). The kind of business is the same in both: a consumer diet, recipe and grocery-ordering app for a broad category of eaters. Where the two PRDs differ, prd-1.md is taken as current and the difference is noted.
 
 A moat needs a **benefit** (it makes us money) and a **barrier** (it stops a competitor copying the benefit). Both tables judge the barrier.
