@@ -1,0 +1,197 @@
+[[AdvancedFormat]]
+
+[[Block:Intro]]
+
+[[Question:Text]]
+[[ID:INTRO]]
+<b>Thanks for helping!</b><br><br>We're building <b>HushPlate</b>, an app that plans your meals around your diet and has an AI agent fill your grocery cart for you.<br><br>Please look at the page below (or <a href="https://hushplate.vercel.app" target="_blank">open it in a new tab</a>), then answer a few questions. It takes about 5 minutes.<br><br><iframe src="https://hushplate.vercel.app" width="100%" height="600" style="border:1px solid #ccc;border-radius:8px;"></iframe>
+
+[[Block:Features]]
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:Q1]]
+Which of these features in the app interest you? (Select all that apply)
+[[Choices]]
+Health statistics input (height, weight, BMI, BMR, GLP-1 dosage)
+InBody scan statistics input (BMI, BMR, muscle mass, visceral fat)
+Diet choice selection (Mediterranean, DASH, Flexitarian, Ketogenic, Atkins, Low-Carb, Vegan, Vegetarian, Pescatarian, Carnivore, Intermittent Fasting, Daniel Fast, Paleo, Low-FODMAP, GLP-1 suppressed appetite)
+Daily nutritional requirements output (calories, fat, protein, carbs, vitamins, minerals)
+Preferred foods list (foods you like to eat)
+Excluded foods list (foods you dislike, that cause problems, or that you're allergic to)
+Recipe aggregation and selection (recipes chosen on a daily, weekly or monthly calendar)
+AI agent ordering (the AI fills your grocery cart at a local store and you decide whether to place the order)
+Delivery options (curbside pickup or home delivery)
+Restaurant eating: the app reads a menu (online or from a photo) and picks exactly what to eat to meet your nutrition targets
+Healthier restaurant choices: the app reads a menu and gives you 3 healthier options that meet your nutrition targets
+Grocery consumption learning: over time the app learns what you eat and recommends recipes, foods and grocery sales, discounts and promos
+Restaurant consumption learning: over time the app learns what you eat and recommends restaurants, deals and meals under $10 (e.g., CheapFoodMap)
+Workout education (how to work out)
+Workout tracking and motivation
+Gamification (rewards that keep you using the app daily, weekly, monthly)
+Daily motivation (positive quotes to start or support your day)
+
+[[Question:TE:Essay]]
+[[ID:Q2]]
+Are there any other features you would want that are not listed above? (Optional)
+
+[[Block:Subscription Pricing]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q3]]
+Based on the features you selected, how would you prefer to pay for access to the app?
+[[Choices]]
+Monthly subscription
+Yearly subscription
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q4]]
+What is the most you would be willing to pay per month?
+[[Choices]]
+Under $10
+$10–$15
+$15–$20
+$20–$25
+$25–$30
+$30–$35
+$35–$40
+$40–$45
+$45–$50
+$50–$55
+$55–$60
+$60–$65
+$65–$70
+$70–$75
+$75–$80
+$80–$85
+$85–$90
+$90–$95
+$95–$100
+Other
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q5]]
+What is the most you would be willing to pay per year?
+[[Choices]]
+Under $120
+$120–$180
+$180–$240
+$240–$300
+$300–$360
+$360–$420
+$420–$480
+$480–$540
+$540–$600
+$600–$660
+$660–$720
+$720–$780
+$780–$840
+$840–$900
+$900–$960
+$960–$1,020
+$1,020–$1,080
+$1,080–$1,140
+$1,140–$1,200
+Other
+
+[[Block:Grocery Pricing]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q6]]
+Based on the features you selected, how would you prefer to pay for the grocery ordering and delivery?
+[[Choices]]
+Monthly subscription
+Per transaction (a percentage of the grocery order)
+Per delivery (a flat fee each time)
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q7]]
+What is the highest transaction fee you would be willing to pay, as a percentage of the grocery order?
+[[Choices]]
+0%
+1%
+2%
+3%
+4%
+5%
+6%
+7%
+8%
+9%
+10%
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q8]]
+What is the most you would be willing to pay per delivery?
+[[Choices]]
+$0
+$1–$4.99
+$5–$9.99
+$10–$19.99
+$20–$24.99
+$25–$29.99
+$30–$35
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q9]]
+How many free deliveries per month would you want before paying a delivery fee?
+[[Choices]]
+0
+1
+2
+3
+4 or more
+
+[[Block:Trial and Marketing]]
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q10]]
+How long would you need to try the app before deciding whether to buy it?
+[[Choices]]
+1 week
+2 weeks
+3 weeks
+4 weeks
+5 weeks
+6 weeks
+7 weeks
+8 weeks
+Longer than 8 weeks
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:Q11]]
+Which of these sources do you use when deciding to buy a mobile app? (Select all that apply)
+[[Choices]]
+Word of mouth
+Facebook
+Instagram
+TikTok
+Google Search
+YouTube
+Google Play Store
+Google Display Network
+App Store search
+ChatGPT (OpenAI)
+Google Gemini
+Perplexity AI
+GumGum
+TV
+Radio
+Other
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:Q12]]
+Which of these reasons explain why you don't currently use an app to help you lose weight and buy groceries? (Select all that apply)
+[[Choices]]
+Cost
+I didn't know these apps existed
+I never thought an app was something I needed
+Tedious logging: weighing portions, scanning barcodes and searching databases takes too much time
+Cluttered interface: pop-ups, ads, paywalls and crowded screens
+Messy real life: restaurant meals and shared home-cooked meals are hard to log accurately
+Judgmental design: resetting streaks, red warnings and rigid calorie limits make slips feel like failure
+Anxiety: constant calorie counting leads to food guilt or fatigue
+Fading motivation: the app only logs numbers instead of giving useful long-term insights
+Inaccurate data: rough estimates and wrong database entries
+Poor medical fit: plans don't account for conditions like diabetes, special diets or activity level
+Privacy: I don't trust how apps store or use my health data
+Other
