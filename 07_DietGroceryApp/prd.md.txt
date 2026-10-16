@@ -1,0 +1,22 @@
+FILE: prd.md
+PRODUCT: HushPlate
+
+USER: a dieter (someone who wants to lose weight, including a GLP-1 user)
+
+PROBLEM: We are proposing a diet, nutrition, recipe, and grocery ordering app that aggregates information for a dieter (including GLP-1 users), which then uses an AI agent to order the food for the dieter (including GLP-1 users).
+
+CORE USER STORY:
+  As a dieter (including a GLP-1 user), I can plug in my health information into an app so the app will allow the following issues to be solved: (1) allow a dieter (or GLP-1 user) to input vital health statistics (height, weight, BMI, BMR, GLP-1 dosage), (2) allow a dieter (or GLP-1 user) to input vital Inbody Scan statistics (height, weight, BMI, BMR, Muscle Mass, Visceral Fat), (3) allow the dieter to choose a diet type (e.g., Keto, Mediterranean, Paleo, Low Carb, suppressed appetite GLP-1 user, etc.), (3) the app will then cross-check the health statistics provided and the diet type for the users daily recommended nutritional requirements for food intake (e.g., Calories, Fat, Protein, Carbs, Vitamins, Minerals, etc.) and water intake (e.g., Cups, Liters, Gallons, etc.), (4) allow the dieter (or GLP-1 user) to input a preferred foods list, (5) allow the dieter (or GLP-1 user) to exclude a preferred foods list (or allergens), (6) the app will then aggregate the dieter’s (or GLP-1 user’s) information, and then provide a list of recipes chosen by the dieter (or GLP-1 user) consistent with their diet plan, and allow the dieter (or GLP-1 users) to then select those recipes across a weekly / monthly calendar, and (7) then an AI agent will purchase those foods from a local grocery store to be delivered to the dieter (or GLP-1 user) at certain intervals selected by the user. 
+
+FEATURES (maximum 3):
+1.	User submits a health statistic form and sees a confirmation message
+2.	User submits a diet type choice then sees a confirmation message
+3.	User is provided a list of recipes to choose from based on the diet type which those recipes are allocated based on a weekly/monthly calendar
+4.	App will aggregate the recipes weekly providing a grocery list and the AI agent will put that grocery list into a cart, where the user decides to purchase or not. 
+
+OUT OF SCOPE (the v2 parking lot):
+  [Everything else you are tempted by. Write it down so you can stop
+  thinking about it.]
+
+DATA WE STORE:
+The user will be providing health statistics, so make sure to protect this data consistent with United States (State and Federal) data privacy laws. 
