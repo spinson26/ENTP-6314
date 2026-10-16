@@ -1,7 +1,7 @@
 # Spec Audit: What prd-1.md Commits HushPlate To
 
-**Prepared:** October 16, 2026 (written against the 13:10 version of prd-1.md)
-**Sources:** `prd-1.md` (its header still reads `FILE: prd.md`) and [research/competitors.md](../research/competitors.md).
+**Prepared:** October 16, 2026 (written against the 15:27 version of prd-1.md)
+**Sources:** `prd-1.md` (its header now reads `FILE: prd-1.md`) and [research/competitors.md](../research/competitors.md).
 **Method:** This is a description, not a recommendation. Quotes are from prd-1.md unless marked otherwise. Anything worked out rather than read is marked **[INFERRED]**. The core user story's numbered items are cited as "story (n)," using this version's numbering of (1) to (22).
 
 ---
@@ -32,7 +32,7 @@ The USER line describes a cart filled "with food for those recipes, which the us
 
 ## 2. WHERE THE WORK HAPPENS
 
-The PRD has no separate "done means" line for each feature. Each feature is one sentence, and below, that sentence is treated as its "done means." All six features end at a confirmation the user sees. Feature 4 points back to story items (10) through (20) for its content. Several outside providers these features rely on are now listed in OUT OF SCOPE; section 6 covers what that means for each feature.
+The PRD has no separate "done means" line for each feature. Each feature is one sentence, and below, that sentence is treated as its "done means." All six features end at a confirmation the user sees. Feature 4 points back to story items (10) through (20) for its content.
 
 ### Feature 1: "User submits a health statistic form, diet goals, diet choice selection, preferred foods, excluded foods, workout plan, and foods in their pantry and sees a confirmation message."
 
@@ -158,7 +158,7 @@ The PRD claims **both**, each with its own mechanism and timing.
 
 ## 5. WHO WE DEPEND ON
 
-The PRD describes grocery stores and AI agents as "agnostic." It names one outside company, CheapFoodMap, "a third-party app." The list below is what the PRD's features need in order to work. "Could a competitor buy it?" draws on competitors.md wherever it has evidence. Most rows are now covered by an OUT OF SCOPE item: AI agents and grocery stores; the AI model; recipe, nutrition, restaurant, calories-burned and promotion data; the CheapFoodMap agreement; the doctor; workout content and quotes; and platforms (see section 6).
+The PRD describes grocery stores and AI agents as "agnostic." It names one outside company, CheapFoodMap, "a third-party app." The list below is what the PRD's features need in order to work. "Could a competitor buy it?" draws on competitors.md wherever it has evidence.
 
 | Dependency | Where prd-1.md implies it | Could a competitor buy the same thing? |
 |---|---|---|
@@ -190,28 +190,13 @@ The data behind daily and weekly recommendations comes from HushPlate's own user
 **What prd-1.md says:**
 
 > OUT OF SCOPE (the v2 parking lot):
-> • AI agents and grocery stores
-> • AI model is used for recipes and menus
-> • Recipe, nutrition, restaurant, calories-burned and promotion data come from
-> • CheapFoodMap agreement
-> • Doctor
-> • Workout content and quotes come from
-> • Platforms
-> • \*The items in this OUT OF SCOPE list are parked until further notice.
+> [Everything else you are tempted by. Write it down so you can stop thinking about it.]
 
-The list has seven items, plus a note: "The items in this OUT OF SCOPE list are parked until further notice." Each item names an outside provider or source that sections 2 and 5 rely on. The list doesn't say whether an item parks only the choice of provider, or the capability itself. Below, for each item, is what the product can't do while it stays parked, read as parking the capability. Every entry in that column is **[INFERRED]**.
+The section holds the template's placeholder text again. The seven parked items in the 13:00–13:10 versions have been removed. **Nothing has been ruled out.** There are no items, so there is nothing the product is barred from doing because of this list.
 
-| Parked item | What the product can't do while it stays parked **[INFERRED]** | Where the PRD still describes it as in scope |
-|---|---|---|
-| **AI agents and grocery stores** | Fill a grocery cart, order for home delivery or curbside pickup, take payment and address data, or read CheapFoodMap. These are the AI agent's three jobs: "(1) puts together a grocery cart, (2) will take payments, and (3) read CheapFoodMap." Option (1), "purchase the groceries themselves," still leaves the user with "a grocery list and recipe list on the app." | USER line ("an AI agent fills the users grocery cart"); story (8), (9); Feature 3 options (2) and (3); DATA WE STORE ("Payment and address data will be taken by the AI agent") |
-| **AI model is used for recipes and menus** | Read a menu "online or from a photo" and pick dishes (story 10, 11), and curate recipes, if those depend on an AI model. The PRD itself doesn't say either one needs a model. | Story (7), (10), (11); Feature 2; Feature 3 ("The app then curates") |
-| **Recipe, nutrition, restaurant, calories-burned and promotion data come from** | Offer recipes (Feature 2), output "daily nutritional requirements" (story 3), pick restaurant dishes "to meet the user's nutrition targets" (story 10, 11), recommend "meals under $10" (story 13), work out "calories burned" (workout plan), or recommend "grocery sales, discounts and promos" (story 12). Each needs a data source. | Features 2, 4 and 6; story (3), (7), (10)–(13), (15) |
-| **CheapFoodMap agreement** | Recommend food under $10 "via CheapFoodMap app" (story 13), if reading CheapFoodMap needs an agreement. The PRD doesn't say whether it does. | Story (13); "the AI agent will read that CheapFoodMap recommendation of food under $10" |
-| **Doctor** | List a longevity doctor's contact information, so story (19) has no doctor to connect the user to. The User Health Report (Feature 6) can still be exported and printed or emailed. | Story (19), (22); Feature 4 ("access a longevity doctor"); the doctor paragraph (booking hours, "will pay that doctor separately"); DATA WE STORE ("in connection with their longevity doctor") |
-| **Workout content and quotes come from** | Educate the user "on how to work out" (story 14) or show "positive quotes" (story 18). | Story (14), (18); Feature 4 ("receive motivation") |
-| **Platforms** | Name the devices the app runs on. No platform is committed. Feature 6's printing and email depend on the device. | "the app" throughout; Feature 6 ("print it to their local printer or emailing") |
+**[INFERRED]** Features 1–3 cover story (1) through (9). Feature 1 also collects the workout plan (16). Feature 4 names "(#10 to #20)," Feature 5 repeats story (21), and Feature 6 matches story (22). As written, every story item is in scope.
 
-**[INFERRED]** Every feature line is unchanged from the previous version. Features 2–6 still describe the capabilities these seven items cover.
+**[INFERRED]** One item is put off in the PRD text, not in the list: the doctor's contact information ("will be provided later"). Until it's provided, story (19) has no doctor to contact.
 
 ---
 
@@ -233,9 +218,14 @@ These are the places where prd-1.md does not answer the six questions above. Non
 - None found in this version. Daily learning "uses the daily confirmations."
 
 **Who we depend on (5)**
-- None beyond the seven items now listed in OUT OF SCOPE. Which AI agents, stores, models, data sources, CheapFoodMap terms, doctor, workout and quote sources, and platforms are all parked there rather than answered.
+- Which AI agents, and which grocery stores they reach.
+- Whether the app uses an AI model for recipe curation and menu reading, and which one.
+- Where recipes, nutrition reference data, restaurant nutrition data and calories-burned data come from.
+- Where grocery sales, discount and promo data comes from.
+- Whether HushPlate has an agreement or data feed with CheapFoodMap.
+- Which longevity doctor. The contact information "will be provided later."
+- Where workout content and motivational quotes come from.
+- Which platforms the app ships on.
 
 **What we ruled out (6)**
-- Whether each OUT OF SCOPE item parks only the choice of provider, or the capability itself.
-- What Features 2–6 do while those items stay parked. The feature lines still describe AI-agent ordering, menu reading, recipes and nutrition outputs, CheapFoodMap recommendations, doctor access, workout education, quotes and printing or email.
-- When the parked items come back. The list says only "until further notice."
+- The entire out-of-scope list. It is template text again.
