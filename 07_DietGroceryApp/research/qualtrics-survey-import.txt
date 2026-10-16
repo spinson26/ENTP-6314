@@ -105,6 +105,20 @@ Per delivery (a flat fee each time)
 
 [[Question:MC:SingleAnswer:Vertical]]
 [[ID:Q7]]
+What is the most you would be willing to pay per month for unlimited grocery ordering and delivery?
+[[Choices]]
+$0
+$1–$4.99
+$5–$9.99
+$10–$14.99
+$15–$19.99
+$20–$24.99
+$25–$29.99
+$30 or more
+Other
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:Q8]]
 What is the highest transaction fee you would be willing to pay, as a percentage of the grocery order?
 [[Choices]]
 0%
@@ -120,7 +134,7 @@ What is the highest transaction fee you would be willing to pay, as a percentage
 10%
 
 [[Question:MC:SingleAnswer:Vertical]]
-[[ID:Q8]]
+[[ID:Q9]]
 What is the most you would be willing to pay per delivery?
 [[Choices]]
 $0
@@ -132,7 +146,7 @@ $25–$29.99
 $30–$35
 
 [[Question:MC:SingleAnswer:Vertical]]
-[[ID:Q9]]
+[[ID:Q10]]
 How many free deliveries per month would you want before paying a delivery fee?
 [[Choices]]
 0
@@ -144,7 +158,7 @@ How many free deliveries per month would you want before paying a delivery fee?
 [[Block:Trial and Marketing]]
 
 [[Question:MC:SingleAnswer:Vertical]]
-[[ID:Q10]]
+[[ID:Q11]]
 How long would you need to try the app before deciding whether to buy it?
 [[Choices]]
 1 week
@@ -158,7 +172,7 @@ How long would you need to try the app before deciding whether to buy it?
 Longer than 8 weeks
 
 [[Question:MC:MultipleAnswer:Vertical]]
-[[ID:Q11]]
+[[ID:Q12]]
 Which of these sources do you use when deciding to buy a mobile app? (Select all that apply)
 [[Choices]]
 Word of mouth
@@ -179,7 +193,7 @@ Radio
 Other
 
 [[Question:MC:MultipleAnswer:Vertical]]
-[[ID:Q12]]
+[[ID:Q13]]
 Which of these reasons explain why you don't currently use an app to help you lose weight and buy groceries? (Select all that apply)
 [[Choices]]
 Cost
