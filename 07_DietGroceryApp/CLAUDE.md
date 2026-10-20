@@ -122,7 +122,7 @@ If a request seems to go beyond the seven features above, ask before building it
 - `research/competitors.md` — nine-competitor teardown and complaint themes
 
 ## Rules
-Explain changes in pain English. I am not a programmer.
+Explain changes in plain English. I am not a programmer.
 - Prefer the simplest solution that works.
 - Ask before adding any new service or library.
 - Commit automatically at the end of each phase. Don't ask, don't just remind.
