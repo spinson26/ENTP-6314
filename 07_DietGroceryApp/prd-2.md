@@ -74,7 +74,31 @@ The app improves over time, and for the user over time. The app improves over ti
 
 
 
-The app will also provide a user a Daily Health Score, that will be aggregated on the app based on their End of Daily Confirmation Audit. The Daily Health Score contains several metrics to average the users health score according: (1) the amount of food eaten compared to daily recipe meal chosen, or restaurant meal chosen (#7 or #11 in CORE USER Story) (scored out of 50), (2) the amount of workout time actually worked out compared to the daily workout plan chosen (#17 in CORE USER Story) (scored out of 30), and (3) whether a user ate their last meal 3 hours before bed time (#10 in CORE USER Story) (scored out of 20). The health score can be used by the user to track daily, weekly, monthly goals based how well the user has been able to stick to using the app. The app will give a user a Daily Health Score everyday after the End of Day Audit. The user can then compare that score with other users of the app, either against the Top 10% of users, or family and/or friends also using the app who the user shares the data with in a family and/or friend group. The Daily Health Score aggregates the data on a daily, weekly, and monthly basis. Scoring for the Daily Health Score, is given by partial credit based on the confirmations by the user saying “yes” if they kept to their daily plan. Each of the 6 meals and snacks earns a share of the 50 points for a normal user. For GLP-1 user or intermittent fasting user, each of the 3 meals and 0 snacks earns a share of the 50 points. A user can recalibrate to more or less meals than the 6 meals (3 meals and 3 snacks), and the scoring will recalibrate based on the total meals (meals and snacks) chosen for the day. For scoring the workout points, each cardio session, and workout session earns a share of the 30 points. For scoring the eating the last meal 3 hours before bed time, if the user eats 3 hours before bed time (or earlier) they earn all 20 points, if the user eats 2.9 to 2.75 hours before bed time they earn 17.5 points, if the user eats 2.74 to 2.5 hours before bed time they earn 15 points, if the user eats 2.49 to 2.25 hours before bed time they earn 12.5 points, if the user eats 2.24 to 2.0 hours before bed time they earn 10 points, if the user eats 1.99 to 1.75 hours before bed time they earn 7.5 points, if the user eats 1.74 to 1.5 hours before bed they earn 5 points, if the user eats 1.49 to 1.25 hours before bed time they earn 2.5 points, if the user eats 1.24 to 1 hour before bed they earn 0 points, if the user eats less than 1 hour before bed they earn 0 points.
+The app will also provide a user a Daily Health Score, that will be aggregated on the app based on their End of Daily Confirmation Audit. The Daily Health Score contains several metrics to average the users health score according: (1) the amount of food eaten compared to daily recipe meal chosen, or restaurant meal chosen (#7 or #11 in CORE USER Story) (scored out of 50), (2) the amount of workout time actually worked out compared to the daily workout plan chosen (#17 in CORE USER Story) (scored out of 30), and (3) whether a user ate their last meal 3 hours before bed time (#10 in CORE USER Story) (scored out of 20). The health score can be used by the user to track daily, weekly, monthly goals based how well the user has been able to stick to using the app. The app will give a user a Daily Health Score everyday after the End of Day Audit. The user can then compare that score with other users of the app, either against the Top 10% of users, or family and/or friends also using the app who the user shares the data with in a family and/or friend group. The Daily Health Score aggregates the data on a daily, weekly, and monthly basis. Scoring for the Daily Health Score, is given by partial credit based on the confirmations by the user saying “yes” if they kept to their daily plan. Each of the 6 meals and snacks earns a share of the 50 points for a normal user. For GLP-1 user or intermittent fasting user, each of the 3 meals and 0 snacks earns a share of the 50 points. A user can recalibrate to more or less meals than the 6 meals (3 meals and 3 snacks), and the scoring will recalibrate based on the total meals (meals and snacks) chosen for the day. For scoring the workout points, each cardio session, and workout session earns a share of the 30 points. 
+
+For scoring the eating the last meal 3 hours before bed time, 
+
+if the user eats 3 hours before bed time (or earlier) they earn all 20 points, 
+
+if the user eats 3 to 2.91 hours before bed time (or earlier) they earn all 20 points, 
+
+if the user eats 2.9 to 2.75 hours before bed time they earn 17.5 points, 
+
+if the user eats 2.74 to 2.5 hours before bed time they earn 15 points, 
+
+if the user eats 2.49 to 2.25 hours before bed time they earn 12.5 points, 
+
+if the user eats 2.24 to 2.0 hours before bed time they earn 10 points, 
+
+if the user eats 1.99 to 1.75 hours before bed time they earn 7.5 points, 
+
+if the user eats 1.74 to 1.5 hours before bed they earn 5 points, 
+
+if the user eats 1.49 to 1.25 hours before bed time they earn 2.5 points, 
+
+if the user eats 1.24 to 1 hour before bed they earn 0 points, 
+
+if the user eats less than 1 hour before bed they earn 0 points.
 
 
 
