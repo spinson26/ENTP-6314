@@ -118,7 +118,7 @@ If a request seems to go beyond the seven features above, ask before building it
 
 - `prd-2.md` — the current product spec
 - `strategy/spec-audit-UPDATED.md` — plain description of what prd-2.md commits to, plus open gaps
-- `strategy/moat-ranking.md` — moat analysis (written against the older prd-1.md)
+- `strategy/moat-ranking.md` — moat analysis based on prd-2.md (brand is the gap)
 - `research/competitors.md` — nine-competitor teardown and complaint themes
 
 ## Rules
