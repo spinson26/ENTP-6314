@@ -34,7 +34,7 @@ As a longevity eater (including dieters, GLP-1 users, and people who want to eat
 
 (9) Delivery options (curbside pickup or home delivery)
 
-(10) When to eat (the app will let the user know when to eat the appropriate food amounts throughout the day according to the recipes selected by the user)
+(10) When to eat (the app will let the user know when to eat the appropriate food amounts throughout the day according to the recipes selected by the user, with the last meal of the day eaten 3 hours before bed)
 
 (11) Restaurant eating: the app reads a menu (online or from a photo) and picks exactly what to eat to meet the user’s nutrition targets
 
@@ -74,7 +74,11 @@ The app improves over time, and for the user over time. The app improves over ti
 
 
 
-The app will also provide a user a Daily Health Score, that will be aggregated on the app based on their End of Daily Confirmation Audit. The Daily Health Score contains several metrics to average the users health score according: (1) the amount of food eaten compared to daily recipes chosen (#7 in CORE USER Story), and (2) the amount of workout time actually worked out compared to the daily workout plan chosen (#16 in CORE USER Story). The health score can be used by the user to track daily, weekly, monthly goals based how well the user has been able to stick to using the app. The app will give a user a Daily Health Score everyday after the End of Day Audit. The user can then compare that score with other users of the app, either against the Top 10% of users, or family and/or friends also using the app who the user shares the data with in a family and/or friend group. The Daily Health Score aggregates the data on a daily, weekly, and monthly basis.
+The app will also provide a user a Daily Health Score, that will be aggregated on the app based on their End of Daily Confirmation Audit. The Daily Health Score contains several metrics to average the users health score according: (1) the amount of food eaten compared to daily recipe meal chosen, or restaurant meal chosen (#7 or #11 in CORE USER Story) (scored out of 50), (2) the amount of workout time actually worked out compared to the daily workout plan chosen (#17 in CORE USER Story) (scored out of 30), and (3) whether a user ate their last meal 3 hours before bed time (#10 in CORE USER Story) (scored out of 20). The health score can be used by the user to track daily, weekly, monthly goals based how well the user has been able to stick to using the app. The app will give a user a Daily Health Score everyday after the End of Day Audit. The user can then compare that score with other users of the app, either against the Top 10% of users, or family and/or friends also using the app who the user shares the data with in a family and/or friend group. The Daily Health Score aggregates the data on a daily, weekly, and monthly basis.
+
+
+
+When to eat, the app tells the user when to eat based on spaced eating habits, with meals spaced at intervals of a meal every 3 hours, for 6 total meals a day for the users daily nutritional requirements. The user must have their last meal 3 hours before bedtime for the Daily Health Score.
 
 
 
@@ -120,6 +124,10 @@ As for Inbody Scan statistical information, Inbody Scan statistical information 
 
 
 
+As for family groups and/or friend groups, the user can include family and/or friends into their group when filing out the onboarding process as long as they know the users avatar name. After the onboarding process, the user can add family and/or friends to their group by sending a request to add the family member and/or friend by sending a friend request. 
+
+
+
 FEATURES:
 
 1\.	User submits a health statistic form, diet goals, diet choice selection, preferred foods, excluded foods, workout plan, and foods in their pantry and sees a confirmation message.
@@ -148,7 +156,7 @@ Temporarily out of scope: \[May fill this in later]
 
 DATA WE STORE:
 
-The user will be providing health statistics about themselves listed in the CORE STORY. Those statistics must be kept on the app and may be updated periodically by the user in connection with their longevity doctor. Combine data across users regarding popular choices for CORE STORY items #1 to #19 but do so in a deidentified way where only an avatar name is used. Avatar names for the Top 10% of users can be seen by other users, and their choices are visible, except their excluded foods and allergies, and their pantry use. Top 10% of Users cannot opt out of having their choices shown. Users can see other avatar names. Other users should not be able to link back avatar names to any user. Make sure to protect the data and avatar names consistent with United States (State and Federal) data privacy laws. We do not store payment and address data. We do retain data for the user to export as a User Health Report to provide to their doctor. All data about a user is maintained for the user until the user terminates services with the app. The user can delete their data from the app upon termination. Users cannot delete app data before ending services. Payment and address data will be taken by the AI agent that this app connects to via an API. Please maintain all data consistent with United States (State and Federal) data privacy laws. 
+The user will be providing health statistics about themselves listed in the CORE STORY. Those statistics must be kept on the app and may be updated periodically by the user in connection with their longevity doctor. Combine data across users regarding popular choices for CORE STORY items #1 to #19 but do so in a deidentified way where only an avatar name is used. Avatar names for the Top 10% of users can be seen by other users, and their choices are visible, except their excluded foods and allergies, and their pantry use. Top 10% of Users cannot opt out of having their choices shown. Users can see other avatar names. Users can compare scores with family groups and/or friend groups, which their user avatar names are visible to family groups and/or friend groups. Other users should not be able to link back avatar names to any user. Make sure to protect the data and avatar names consistent with United States (State and Federal) data privacy laws. We do not store payment and address data. We do retain data for the user to export as a User Health Report to provide to their doctor. All data about a user is maintained for the user until the user terminates services with the app. The user can delete their data from the app upon termination. Users cannot delete app data before ending services. Payment and address data will be taken by the AI agent that this app connects to via an API. Please maintain all data consistent with United States (State and Federal) data privacy laws. 
 
 
 
