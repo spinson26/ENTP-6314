@@ -1,7 +1,7 @@
 # Spec Audit: What prd-2.md Commits HushPlate To
 
-**Prepared:** October 20, 2026 (written against the 16:17 version of prd-2.md)
-**Sources:** `prd-2.md` and [research/competitors.md](../research/competitors.md).
+**Prepared:** October 20, 2026 (written against the 16:35 version of prd-2.md)
+**Sources:** `prd-2.md` (its header reads `FILE: prd-1.md` in this version) and [research/competitors.md](../research/competitors.md).
 **Method:** This is a description, not a recommendation. Quotes are from prd-2.md unless marked otherwise. Anything worked out rather than read is marked **[INFERRED]**. The core user story's numbered items are cited as "story (n)," using this version's numbering of (1) to (24).
 
 **What changed since prd-1.md:**
@@ -44,18 +44,18 @@ The USER line describes a cart filled "with food for those recipes, which the us
 
 The PRD has no separate "done means" line for each feature. Each feature is one sentence, and below, that sentence is treated as its "done means." All seven features end at a confirmation the user sees. Feature 4 points back to story items (10) through (21) for its content.
 
-### Feature 1: "User submits a health statistic form, diet goals, diet choice selection, preferred foods, excluded foods, workout plan, and foods in their pantry and sees a confirmation message."
+### Feature 1: "User submits a health statistic form, diet goals, diet choice selection, preferred foods, excluded foods, workout plan, and foods in their pantry, and family and/or friends and sees a confirmation message."
 
 | The product does | The user still does, by hand or elsewhere |
 |---|---|
-| Shows a form and accepts health statistics, a diet goal, a diet choice, a preferred-foods list, an excluded-foods list, a workout plan and the foods in the user's pantry. Then shows a confirmation. | Gets the numbers. The story says the user will "plug in their health statistical information into the app (height, weight, BMI, BMR, muscle mass, visceral fat, GLP-1 dosage, or Inbody Scan Statistical information)." |
+| Shows a form and accepts health statistics, a diet goal, a diet choice, a preferred-foods list, an excluded-foods list, a workout plan, the foods in the user's pantry, and family and/or friends. Then shows a confirmation. | Gets the numbers. The story says the user will "plug in their health statistical information into the app (height, weight, BMI, BMR, muscle mass, visceral fat, GLP-1 dosage, or Inbody Scan Statistical information)." |
 | Works out BMI and BMR if the user doesn't enter them: "they can be typed into the app by the user, or the app will workout the BMI and BMR for the user." | Enters muscle mass and visceral fat if they have them. "Inbody Scan statistical information to use the app is not required. The user can just input their statistical information into the app themselves." **[INFERRED]** Those figures still come from a measurement taken elsewhere. |
 | | **[INFERRED]** Looks up their GLP-1 dosage from their prescription. |
 | | Picks a diet goal from story (1) and a diet choice from the 16 in story (2). Feature 5 adds recommendations the user "can use ... to make choices in #1 to #19." |
 | | Writes their own preferred-foods and excluded-foods lists, story (4) and (5), including "foods ... the user is allergic to." |
 | | Enters what's in their pantry. Story (6): "a user can input what foods that it has in their pantry, so that recipes and a grocery cart can be aggregated, and used to pick recipes and/or add or take food out of the grocery cart." **[INFERRED]** The user keeps this up to date by hand; the PRD describes no other way pantry contents change. |
 | | Enters a workout plan. Story (17): "input their daily workouts that they plan to do each day, when inputting their health statistics." The user sets "the number of time they plan to spend on that activity as part of the initial survey," and the app "will ask the length of time for the cardiovascular work, and the free weight work." |
-| | **[INFERRED]** Adds family and friends to a group during onboarding if they know their avatar names (see Feature 7). |
+| | Adds family and friends to a group by avatar name: "the user can include family and/or friends into their group when filing out the onboarding process as long as they know the users avatar name." Each person "must accept the request to be added." **[INFERRED]** The user has to get the other person's avatar name from them outside the app. |
 | | Updates the numbers over time. DATA WE STORE says statistics "may be updated periodically by the user in connection with their longevity doctor." **[INFERRED]** The PRD describes no import from scales, scanners, health apps or pharmacies, so the user types updates in by hand. |
 
 ### Feature 2: "User receives daily nutritional requirements, and then several options for recipes based on their nutritional requirements, diet choices, and preferred and excluded foods, and foods in their pantry are provided allocated on a daily/weekly/monthly calendar, which the user can choose from and then sees a confirmation message."
@@ -80,7 +80,7 @@ The PRD has no separate "done means" line for each feature. Each feature is one 
 
 | Story item | The product does | The user still does, by hand or elsewhere |
 |---|---|---|
-| (10) When to eat | "the app will let the user know when to eat the appropriate food amounts throughout the day according to the recipes selected by the user, with the last meal of the day eaten 3 hours before bed." Elsewhere: "When to eat, the app tells the user when to eat based on spaced eating habits, with meals spaced at intervals of a meal every 3 hours, for 6 total meals a day for the users daily nutritional requirements. The user must have their last meal 3 hours before bedtime for the Daily Health Score." | Eats at those times, with the last meal 3 hours before bed. **[INFERRED]** The PRD doesn't say how the user is told (an alert, or a screen they check), or how the app learns the user's bedtime. |
+| (10) When to eat | "the app will let the user know when to eat the appropriate food amounts throughout the day according to the recipes selected by the user, with the last meal of the day eaten 3 hours before bed." Elsewhere: "When to eat, the app tells the user when to eat based on spaced eating habits, with meals spaced at intervals of a meal every 3 hours, for 6 total meals a day for the users daily nutritional requirements. The meals are broken down into 3 meals, and 3 snacks per day: meal 1, snack 1, meal 2, snack 2, meal 3, snack 3. The user must have their last meal 3 hours before bedtime for the Daily Health Score. During the End of Day Audit, the user inputs their expected bedtime, and confirms their last meal of the day." | Eats at those times, with the last meal 3 hours before bed. Enters their expected bedtime and confirms their last meal in the story (21) audit. **[INFERRED]** The PRD doesn't say how the user is told when to eat (an alert, or a screen they check). |
 | (11) Restaurant eating | "reads a menu (online or from a photo) and picks exactly what to eat to meet the user's nutrition targets" | **[INFERRED]** Photographs the menu or finds it online; orders and pays at the restaurant. |
 | (12) Healthier restaurant choices | "reads a menu and gives the user 3 healthier options that meet the user's nutrition targets" | **[INFERRED]** Same as (11), plus picks one of the three. |
 | (13) Grocery consumption learning | "over time the app learns what the user eats and recommends recipes, foods and grocery sales, discounts and promos" | Confirms or corrects what they ate through the story (21) audit. |
@@ -121,18 +121,16 @@ Story (23) calls the contents "all the health metrics of the patient," while Fea
 
 The PRD describes the score in a separate paragraph:
 
-> The app will also provide a user a Daily Health Score, that will be aggregated on the app based on their End of Daily Confirmation Audit. The Daily Health Score contains several metrics to average the users health score according: (1) the amount of food eaten compared to daily recipe meal chosen, or restaurant meal chosen (#7 or #11 in CORE USER Story) (scored out of 50), (2) the amount of workout time actually worked out compared to the daily workout plan chosen (#17 in CORE USER Story) (scored out of 30), and (3) whether a user ate their last meal 3 hours before bed time (#10 in CORE USER Story) (scored out of 20). The health score can be used by the user to track daily, weekly, monthly goals based how well the user has been able to stick to using the app. The app will give a user a Daily Health Score everyday after the End of Day Audit. The user can then compare that score with other users of the app, either against the Top 10% of users, or family and/or friends also using the app who the user shares the data with in a family and/or friend group. The Daily Health Score aggregates the data on a daily, weekly, and monthly basis.
+> The app will also provide a user a Daily Health Score, that will be aggregated on the app based on their End of Daily Confirmation Audit. The Daily Health Score contains several metrics to average the users health score according: (1) the amount of food eaten compared to daily recipe meal chosen, or restaurant meal chosen (#7 or #11 in CORE USER Story) (scored out of 50), (2) the amount of workout time actually worked out compared to the daily workout plan chosen (#17 in CORE USER Story) (scored out of 30), and (3) whether a user ate their last meal 3 hours before bed time (#10 in CORE USER Story) (scored out of 20). The health score can be used by the user to track daily, weekly, monthly goals based how well the user has been able to stick to using the app. The app will give a user a Daily Health Score everyday after the End of Day Audit. The user can then compare that score with other users of the app, either against the Top 10% of users, or family and/or friends also using the app who the user shares the data with in a family and/or friend group. The Daily Health Score aggregates the data on a daily, weekly, and monthly basis. Scoring for the Daily Health Score, is given by partial credit based on the confirmations by the user saying “yes” if they kept to their daily plan.
 
 Story (24): "the app allow the user to create a family group and/or friend group for accountability, where the user can share their Daily Health Score."
 
 | The product does | The user still does, by hand or elsewhere |
 |---|---|
-| Works out a Daily Health Score after each daily audit from three parts: "(1) the amount of food eaten compared to daily recipe meal chosen, or restaurant meal chosen (#7 or #11 in CORE USER Story) (scored out of 50)," "(2) the amount of workout time actually worked out compared to the daily workout plan chosen (#17 in CORE USER Story) (scored out of 30)," and "(3) whether a user ate their last meal 3 hours before bed time (#10 in CORE USER Story) (scored out of 20)." **[INFERRED]** The three parts add up to 100. | Completes the story (21) daily audit, which the score is "based on." |
-| Rolls the score up "daily, weekly, and monthly" so the user can "track daily, weekly, monthly goals." | Adds family and friends to their group. "the user can include family and/or friends into their group when filing out the onboarding process as long as they know the users avatar name. After the onboarding process, the user can add family and/or friends to their group by sending a request to add the family member and/or friend by sending a friend request." **[INFERRED]** The user has to get the other person's avatar name from them outside the app. |
+| Works out a Daily Health Score after each daily audit from three parts: "(1) the amount of food eaten compared to daily recipe meal chosen, or restaurant meal chosen (#7 or #11 in CORE USER Story) (scored out of 50)," "(2) the amount of workout time actually worked out compared to the daily workout plan chosen (#17 in CORE USER Story) (scored out of 30)," and "(3) whether a user ate their last meal 3 hours before bed time (#10 in CORE USER Story) (scored out of 20)." "Scoring for the Daily Health Score, is given by partial credit based on the confirmations by the user saying “yes” if they kept to their daily plan." **[INFERRED]** The three parts add up to 100. | Completes the story (21) daily audit, which the score is "based on," including expected bedtime and last meal. |
+| Rolls the score up "daily, weekly, and monthly" so the user can "track daily, weekly, monthly goals." | Adds family and friends to their groups: at onboarding by avatar name, or later "by sending a friend request." "The family and/or friend must accept the request." "A user can be in more than 1 family and/or friend group." **[INFERRED]** The user has to get the other person's avatar name from them outside the app. |
 | Lets the user compare their score "against the Top 10% of users, or family and/or friends." | Chooses to share their score with the group ("the user can share that data"). |
 | Shows "a confirmation message showing the user their Daily Health Score." | |
-
-The group paragraph places adding family and friends inside "the onboarding process," but Feature 1's line doesn't list it.
 
 ---
 
@@ -140,7 +138,7 @@ The group paragraph places adding family and friends inside "the onboarding proc
 
 **What prd-2.md says:**
 
-> DATA WE STORE: The user will be providing health statistics about themselves listed in the CORE STORY. Those statistics must be kept on the app and may be updated periodically by the user in connection with their longevity doctor. Combine data across users regarding popular choices for CORE STORY items #1 to #19 but do so in a deidentified way where only an avatar name is used. Avatar names for the Top 10% of users can be seen by other users, and their choices are visible, except their excluded foods and allergies, and their pantry use. Top 10% of Users cannot opt out of having their choices shown. Users can see other avatar names. Users can compare scores with family groups and/or friend groups, which their user avatar names are visible to family groups and/or friend groups. Other users should not be able to link back avatar names to any user. Make sure to protect the data and avatar names consistent with United States (State and Federal) data privacy laws. We do not store payment and address data. We do retain data for the user to export as a User Health Report to provide to their doctor. All data about a user is maintained for the user until the user terminates services with the app. The user can delete their data from the app upon termination. Users cannot delete app data before ending services. Payment and address data will be taken by the AI agent that this app connects to via an API. Please maintain all data consistent with United States (State and Federal) data privacy laws.
+> DATA WE STORE: The user will be providing health statistics about themselves listed in the CORE STORY. Those statistics must be kept on the app and may be updated periodically by the user in connection with their longevity doctor. Combine data across users regarding popular choices for CORE STORY items #1 to #19 but do so in a deidentified way where only an avatar name is used. Avatar names for the Top 10% of users can be seen by other users, and their choices are visible, except their excluded foods and allergies, and their pantry use. Avatar names for the Top 10% users Daily Health Scores are visible by other users. Top 10% of Users cannot opt out of having their choices shown, or their Daily Health Score. Users can see other avatar names. Users can compare scores with family groups and/or friend groups, which their user avatar names are visible to family groups and/or friend groups. Other users not in a family and/or friend group should not be able to link back avatar names to any user. Make sure to protect the data and avatar names consistent with United States (State and Federal) data privacy laws. We do not store payment and address data. We do retain data for the user to export as a User Health Report to provide to their doctor. All data about a user is maintained for the user until the user terminates services with the app. The user can delete their data from the app upon termination. Users cannot delete app data before ending services. Payment and address data will be taken by the AI agent that this app connects to via an API. Please maintain all data consistent with United States (State and Federal) data privacy laws.
 
 Elsewhere in the PRD:
 
@@ -162,8 +160,8 @@ Elsewhere in the PRD:
 
 **Shared with other users inside the product:**
 - Top-10% avatar names and their choices, except excluded foods, allergies and pantry use (DATA WE STORE).
-- A user's Daily Health Score and avatar name, with members of their family and/or friend group: "Users can compare scores with family groups and/or friend groups, which their user avatar names are visible to family groups and/or friend groups."
-- **[INFERRED]** Top-10% users' Daily Health Scores, since users can compare their score "against the Top 10% of users." DATA WE STORE doesn't list the score among what's visible.
+- A user's Daily Health Score and avatar name, with members of their family and/or friend groups: "Users can compare scores with family groups and/or friend groups, which their user avatar names are visible to family groups and/or friend groups." The link-back rule now reads "Other users not in a family and/or friend group should not be able to link back avatar names to any user."
+- Top-10% users' avatar names and Daily Health Scores, to all users: "Avatar names for the Top 10% users Daily Health Scores are visible by other users." Top-10% users "cannot opt out of having their choices shown, or their Daily Health Score."
 
 **Passed through without keeping:**
 - "We do not store payment and address data." "Payment and address data will be taken by the AI agent that this app connects to via an API."
@@ -250,14 +248,13 @@ These are the places where prd-2.md does not answer the six questions above. Non
 - Who the user is beyond age, country and goal: household, income, health condition. The USER line sets only "above the age of 18" and "located in the United States."
 
 **Where the work happens (2)**
-- How the app tells the user when to eat (an alert, or a screen they check), and how it learns the user's bedtime, which the "3 hours before bed" rule and score part (3) depend on.
+- How the app tells the user when to eat: an alert, or a screen they check.
+- How the day's meal times are set before the user enters that night's expected bedtime, since bedtime is entered "During the End of Day Audit."
 - How "a meal every 3 hours, for 6 total meals a day" applies to users who pick the "Intermittent Fasting" or "GLP-1 suppressed appetite" diet choices.
-- How each score part is graded within its points: for example, whether eating most of a meal earns part of the 50, or whether part (3) is all 20 or nothing.
-- Whether people added to a group during onboarding have to accept, as a "friend request" after onboarding implies, and whether a user can belong to more than one family or friend group.
+- How partial credit is counted within each score part. The PRD says it's "based on the confirmations by the user saying “yes,”" but not, for example, whether each of the 6 meals and snacks earns a share of the 50.
 
 **What we hold (3)**
-- Whether top-10% users' Daily Health Scores are visible to all users. Users can compare "against the Top 10% of users," but DATA WE STORE lists only top-10% "choices" as visible.
-- How family and friend groups fit with "Other users should not be able to link back avatar names to any user." Group members exchange avatar names ("as long as they know the users avatar name"), and DATA WE STORE makes avatar names "visible to family groups and/or friend groups." **[INFERRED]** Group members would usually know each other's real identities.
+- None found in this version.
 
 **Does it get better with use (4)**
 - None found in this version.
